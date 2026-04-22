@@ -1,7 +1,97 @@
+:root {
+    /*Typeface*/
+    --font-heading: 'Canela', serif;
+    --font-body: 'Avenir', sans-serif;
+
+    --color-bg-primary: #111112;
+    --color-bg-secondary: #19191A;
+    --color-bg-tertiary: #2c2c2c;
+
+    --color-text-primary: #f8f6f0;
+    --color-text-secondary: #c4c2c0;
+    --color-text-tertiary: #605f5f;
+
+    --color-accent: #a48f6e;
+    --color-accent-light: #c6baa6;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('Canela Family/Canela-Regular-Trial.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('Avenir\ Family/Avenir-Book.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1, h2 {
+    font-family: 'Canela', serif;
+    font-weight: 400; 
+    color: var(--color-text-primary);
+}
+
+h1 {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Avenir', sans serif;
+    font-weight: 400;
+    color: var(--color-text-primary);
+}
+
+.body-1 { 
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.body-2 { 
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.body-2-bold { 
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+a {
+    text-decoration: none;
+    color: #f8f6f0;
+}
+
 button {
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .header {
@@ -10,7 +100,7 @@ button {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: #111112;
+    background-color: #111112b3;
     height: 90px;
 }
 
@@ -24,12 +114,18 @@ button {
 .nav-left {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
     justify-self: start;
 }
 
 .logo {
     justify-self: center;
+    height: 50px;
+}
+
+.logo-btn {
+    padding: 0;
+    border: none;
 }
 
 .nav-right {
@@ -42,3 +138,59 @@ button {
     padding: 0px;
 }
 
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    background-image: url(Assets/Hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        #11111200,
+        #111112bd
+    );
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    padding: 0 40px;
+    margin-bottom: 80px;
+}
+
+.hero-title {
+    margin-bottom: 24px;
+}
+
+.btn-primary {
+    width: 350px;
+    height: 56px;
+    margin-top: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-text-primary);
+    border-radius: 8px;
+    gap: 10px;
+    padding: 0;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-text-primary);
+    color: var(--color-bg-primary);
+}
