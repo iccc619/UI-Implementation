@@ -99,9 +99,16 @@ main {
     margin: 0;
 }
 
+.caption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: auto;
+    margin: 0;
+}
+
 a {
     text-decoration: none;
-    color: #f8f6f0;
+    color: var(--color-text-primary);
 }
 
 button {
@@ -109,6 +116,10 @@ button {
     border: none;
     cursor: pointer;
     padding: 0;
+    margin: 0;
+    font-family: 'Avenir', sans serif;
+    font-weight: 400;
+    color: var(--color-text-primary);
 }
 
 img {
@@ -169,6 +180,96 @@ img {
 
 .menu-btn, .search-btn, .cart-btn {
     padding: 0px;
+}
+
+.sidebar {
+    width: 0;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: var(--color-bg-secondary);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.closebtn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 30px;
+    color: var(--color-text-tertiary);
+    cursor: pointer;
+}
+
+.sidebar-main,
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-main {
+    margin-top: 80px;
+}
+
+.sidebar a,
+.sidebar-dropdown-btn {
+    width: 100%;
+    min-height: 60px;
+    padding: 0 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    white-space: nowrap;
+    background: none;
+    border: none;
+    color: var(--color-text-primary);
+    cursor: pointer;
+}
+
+.sidebar-bottom a,
+.sidebar-bottom .sidebar-dropdown-btn {
+    color: var(--color-text-secondary);
+}
+
+.sidebar a:hover,
+.sidebar-dropdown-btn:hover {
+    color: var(--color-accent);
+}
+
+.sidebar-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.sidebar-dropdown a {
+    min-height: 40px;
+    color: var(--color-text-secondary);
+    padding-left: 50px;
+}
+
+.sidebar-dropdown-btn.active + .sidebar-dropdown {
+    max-height: 360px;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.sidebar-dropdown-btn.active .arrow {
+    transform: rotate(180deg);
+}
+
+.sidebar-divider {
+    height: 1px;
+    background-color: var(--color-accent);
+    opacity: 0.6;
+    margin: 28px 40px;
 }
 
 .hero {
@@ -395,7 +496,7 @@ img {
 
 @media (max-width: 768px) {
     .container {
-        padding: 0px 20px 0 20px;
+        padding: 30px 20px 0 20px;
     }
 
     #recent-blog, #best-selling {

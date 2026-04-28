@@ -12,7 +12,97 @@
 <header class="header">
     <nav class="nav">
         <div class="nav-left">
-            <button class="menu-btn" aria-label="Open menu">
+
+            <div class="sidebar" id="site-menu">
+                
+                <div>
+                    <button class="closebtn" onclick="closeNav()" aria-label="Close menu">×</button>
+                </div>
+                
+                <div class="sidebar-main">
+                    <a href="latest releases" class="body-1-medium">Latest Releases</a>
+
+                    <button class="sidebar-dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        By Photographer
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="sidebar-dropdown">
+                        <a href="#" class="body-2">Bernie Zajac</a>
+                        <a href="#" class="body-2">Russels Stewart</a>
+                    </div>
+
+                    <button class="sidebar-dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Print Galleries
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="sidebar-dropdown">
+                        <a href="#" class="body-2">Ocean / Seascape</a>
+                        <a href="#" class="body-2">Mountain / Forest</a>
+                        <a href="#" class="body-2">Rural / Country</a>
+                        <a href="#" class="body-2">Urban / City</a>
+                        <a href="#" class="body-2">Panorama</a>
+                        <a href="#" class="body-2">B&W / Toned</a>
+                        <a href="#" class="body-2">Overseas Travel</a>
+                    </div>
+
+                    <button class="sidebar-dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        About
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="sidebar-dropdown">
+                        <a href="#" class="body-2">About Us</a>
+                        <a href="#" class="body-2">Our Mounts & Frames</a>
+                        <a href="#" class="body-2">Our Print Process</a>
+                        <a href="#" class="body-2">Our Print Sizes</a>
+                    </div>
+
+                    <button class="sidebar-dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Blog
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="sidebar-dropdown">
+                        <a href="#" class="body-2">AusLight SpotLights</a>
+                        <a href="#" class="body-2">General</a>
+                        <a href="#" class="body-2">Image Previews</a>
+                        <a href="#" class="body-2">New Print Releases</a>
+                        <a href="#" class="body-2">New Products</a>
+                        <a href="#" class="body-2">Photography Adventures</a>
+                        <a href="#" class="body-2">Photography Tips</a>
+                    </div>
+
+                    <a href="#" class="body-1-medium">Workshops</a>
+                </div>
+
+                <div class="sidebar-divider"></div>
+
+                <div class="sidebar-bottom">
+
+                    <button class="sidebar-dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        AUD / English
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="sidebar-dropdown">
+                        <a href="#" class="body-2">AUD / English</a>
+                        <a href="#" class="body-2">USD / English</a>
+                    </div>
+
+                    <a href="#" class="body-1-medium">Log In</a>
+                    <a href="#" class="body-1-medium">Contact Us</a>
+                </div>
+
+            </div>
+
+            <button class="menu-btn" aria-label="Open menu" onclick="openNav()">
                 <img src="Assets/Menu.svg" alt="">
             </button>
             <button class="search-btn" aria-label="Search">
@@ -20,8 +110,8 @@
             </button>
         </div>
 
-        <div class="logo" viewBox="0 0 74 50">
-            <button clas="logo-btn" aria-label="Logo">
+        <div class="logo">
+            <button class="logo-btn" aria-label="Logo">
                 <img src="Assets/Logo.svg" alt="">
             </button>
         </div>
@@ -161,8 +251,20 @@
 </main>
 
 <footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-column">
+            <a href="#" class="caption">Contact</a>
+            <a href="#" class="caption">FAQ</a>
+            <a href="#" class="caption">Privacy Policy</a>
+            <a href="#" class="caption">Terms & Conditions</a>
+        </div>
+        <div class="footer-column">
 
+        </div>
+    </div>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
