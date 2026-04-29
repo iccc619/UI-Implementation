@@ -7,13 +7,13 @@ function closeNav() {
     sidebar.style.width = "0";
 
     // reset all dropdowns
-    const buttons = sidebar.querySelectorAll(".sidebar-dropdown-btn");
+    const buttons = sidebar.querySelectorAll(".dropdown-btn");
 
     buttons.forEach(btn => btn.classList.remove("active"));
 }
 
 function toggleDropdown(button) {
-    const allButtons = document.querySelectorAll(".sidebar-dropdown-btn");
+    const allButtons = document.querySelectorAll(".dropdown-btn");
     // close the previous button when opening a new one//
     allButtons.forEach(btn => {
         if (btn !== button) {
