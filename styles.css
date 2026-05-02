@@ -304,6 +304,26 @@ img {
     mix-blend-mode: multiply;
 }
 
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--color-text-secondary);
+    padding: 130px 120px 40px 120px;
+}
+
+.breadcrumb img {
+    opacity: 60%;
+}
+
+.breadcrumb a {
+    color: var(--color-text-secondary);
+}
+
+.breadcrumb a:hover {
+    color: var(--color-accent);
+}
+
 .hero-content {
     position: relative;
     z-index: 1;
