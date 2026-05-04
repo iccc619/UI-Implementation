@@ -705,6 +705,18 @@ select {
     pointer-events: none;
 }
 
+.add-cart-btn {
+    height: 52px;
+    margin-top: 16px;
+    border-radius: 8px;
+    background-color: var(--color-accent);
+    color: var(--color-bg-primary);
+}
+
+.add-cart-btn:hover {
+    background-color: var(--color-accent-light);
+}
+
 #for-you {
     margin-top: 80px;
 }
