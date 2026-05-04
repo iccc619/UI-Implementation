@@ -45,3 +45,18 @@ function toggleDropdown(button) {
 
     button.classList.toggle("active");
 }
+
+function toggleSort() {
+    const sortMenu = document.getElementById("sort-menu");
+    const sortBtn = document.querySelector(".sort-btn");
+
+    sortMenu.classList.toggle("open");
+    sortBtn.classList.toggle("active");
+}
+
+function selectSort(button) {
+    document.getElementById("sort-label").textContent = button.textContent;
+
+    document.getElementById("sort-menu").classList.remove("open");
+    document.querySelector(".sort-btn").classList.remove("active");
+}

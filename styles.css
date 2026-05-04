@@ -361,6 +361,41 @@ figure {
     margin: 28px 40px;
 }
 
+.sort-wrapper {
+    position: relative;
+}
+
+.sort-menu {
+    position: absolute;
+    top: 32px;
+    right: 0;
+    width: 220px;
+    background-color: var(--color-bg-secondary);
+    padding: 16px 0;
+    display: none;
+    z-index: 1000;
+}
+
+.sort-menu.open {
+    display: flex;
+    flex-direction: column;
+}
+
+.sort-menu button {
+    width: 100%;
+    padding: 12px 24px;
+    text-align: left;
+    color: var(--color-text-secondary);
+}
+
+.sort-menu button:hover {
+    color: var(--color-accent);
+}
+
+.sort-btn.active .sort-arrow {
+    transform: rotate(180deg);
+}
+
 .hero {
     position: relative;
     height: 100vh;

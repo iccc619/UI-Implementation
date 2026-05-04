@@ -342,12 +342,26 @@
                 <img src="Assets/Filter.svg" alt="">
             </button>
 
-            <button class="sort-btn body-2" aria-label="Sort products">
-                Sort By
-                <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
+            <div class="sort-wrapper">
+                <button class="sort-btn body-2" aria-label="Sort products" onclick="toggleSort()">
+                    <span id="sort-label">Sort By</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+    
+                <div class="sort-menu" id="sort-menu">
+                    <button class="body-2" onclick="selectSort(this)">Recommended</button>
+                    <button class="body-2" onclick="selectSort(this)">Best Selling</button>
+                    <button class="body-2" onclick="selectSort(this)">Alphabetically, A-Z</button>
+                    <button class="body-2" onclick="selectSort(this)">Alphabetically, Z-A</button>
+                    <button class="body-2" onclick="selectSort(this)">Price, high to low</button>
+                    <button class="body-2" onclick="selectSort(this)">Price, low to high</button>
+                    <button class="body-2" onclick="selectSort(this)">Date, old to new</button>
+                    <button class="body-2" onclick="selectSort(this)">Date, new to old</button>
+                </div>
+            </div>
+            
 
         </div>
 
@@ -363,7 +377,7 @@
                 </div>
             </figure>
 
-            <a href="Fire_and_Rain" class="product-card">
+            <a href="fire_and_rain" class="product-card">
                 <article class="product-image">
                     <img src="Assets/Fire and Rain.jpg">
                 </article>
