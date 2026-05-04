@@ -658,6 +658,17 @@ select {
 
 .product-detail-image img {
     width: 100%;
+    display: block;
+}
+
+.portrait-image {
+    overflow: hidden;
+}
+
+.portrait-image img {
+    width: 100%;
+    display: block;
+    object-fit: contain;
 }
 
 .product-detail-info {
@@ -870,7 +881,7 @@ select {
         scrollbar-width: none;
     }
 
-    .breadcrumb {
+    .breadcrumb, .quicknav {
         padding: 130px 60px 40px 60px;
     }
 
@@ -941,7 +952,7 @@ select {
         padding: 0 20px;
     }
 
-    .breadcrumb {
+    .breadcrumb, .quicknav {
         padding: 110px 20px 20px 20px;
     }
 

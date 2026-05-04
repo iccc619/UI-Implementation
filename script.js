@@ -143,3 +143,41 @@ function toggleDetailDropdown(button) {
 
     icon.textContent = dropdown.classList.contains("open") ? "⌃" : "⌄";
 }
+
+function setPortraitImageClosedHeight() {
+    const info = document.querySelector(".product-detail-info");
+    const image = document.querySelector(".portrait-image img");
+
+    if (!info || !image) return;
+
+    const activeButtons = info.querySelectorAll(".product-accordion .dropdown-btn.active");
+    const dropdowns = info.querySelectorAll(".product-accordion .dropdown");
+
+    // temporarily remove animation and force all dropdowns closed
+    dropdowns.forEach(dropdown => {
+        dropdown.style.transition = "none";
+        dropdown.style.maxHeight = "0";
+    });
+
+    activeButtons.forEach(btn => btn.classList.remove("active"));
+
+    // force browser to apply the closed state
+    info.offsetHeight;
+
+    const closedHeight = info.offsetHeight;
+
+    image.style.height = closedHeight + "px";
+    image.style.maxHeight = closedHeight + "px";
+    image.style.objectFit = "contain";
+
+    // restore original dropdown state
+    activeButtons.forEach(btn => btn.classList.add("active"));
+
+    dropdowns.forEach(dropdown => {
+        dropdown.style.transition = "";
+        dropdown.style.maxHeight = "";
+    });
+}
+
+window.addEventListener("load", setPortraitImageClosedHeight);
+window.addEventListener("resize", setPortraitImageClosedHeight);

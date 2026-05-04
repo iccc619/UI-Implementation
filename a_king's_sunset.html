@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="nav">
+        <div class="nav-left">
+
+            <div class="sidebar" id="site-menu">
+                
+                <div>
+                    <button class="closebtn" onclick="closeNav()" aria-label="Close menu">×</button>
+                </div>
+                
+                <div class="sidebar-main">
+                    <a href="latest_releases.html" class="body-1-medium">Latest Releases</a>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        By Photographer
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown">
+                        <p class="body-2">Bernie Zajac</p>
+                        <p class="body-2">Russels Stewart</p>
+                    </div>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Print Galleries
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown">
+                        <a href="ocean.html" class="body-2">Ocean / Seascape</a>
+                        <p class="body-2">Mountain / Forest</p>
+                        <p class="body-2">Rural / Country</p>
+                        <p class="body-2">Urban / City</p>
+                        <p class="body-2">Panorama</p>
+                        <p class="body-2">B&W / Toned</p>
+                        <p class="body-2">Overseas Travel</p>
+                    </div>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        About
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown">
+                        <p class="body-2">About Us</p>
+                        <p class="body-2">Our Mounts & Frames</p>
+                        <p class="body-2">Our Print Process</p>
+                        <p class="body-2">Our Print Sizes</p>
+                    </div>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Blog
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown">
+                        <p class="body-2">AusLight SpotLights</p>
+                        <a href="general.html" class="body-2">General</a>
+                        <p class="body-2">Image Previews</p>
+                        <p class="body-2">New Print Releases</p>
+                        <p class="body-2">New Products</p>
+                        <p class="body-2">Photography Adventures</p>
+                        <p class="body-2">Photography Tips</p>
+                    </div>
+
+                    <p class="body-1-medium">Workshops</p>
+                </div>
+
+                <div class="sidebar-divider"></div>
+
+                <div class="sidebar-bottom">
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        AUD / English
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown">
+                        <p class="body-2">AUD / English</p>
+                        <p class="body-2">USD / English</p>
+                    </div>
+
+                    <p class="body-1-medium">Log In</p>
+                    <p class="body-1-medium">Contact Us</p>
+                </div>
+
+            </div>
+
+            <button class="menu-btn" aria-label="Open menu" onclick="openNav()">
+                <img src="Assets/Menu.svg" alt="">
+            </button>
+            <button class="search-btn" aria-label="Search">
+                <img src="Assets/Search.svg" alt="">
+            </button>
+        </div>
+
+        <div class="logo">
+            <button class="logo-btn" aria-label="Logo">
+                <a href="index.html"><img src="Assets/Logo.svg" alt=""></a>
+            </button>
+        </div>
+
+        <div class="nav-right">
+            <button class="cart-btn" aria-label="Shopping cart">
+                <img src="Assets/Cart.svg" alt="">
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main class="page-shell">
+
+    <nav class="quicknav body-1">
+        <img src="Assets/Arrow.svg" style="transform: scaleX(-1);">
+        <a href="#">Back</a>
+    </nav>
+
+    <section class="product-detail container">
+        <figure class="product-detail-image portrait-image">
+            <img src="Assets/A King's Sunset.jpg" alt="A King's Sunset">
+        </figure>
+
+        <article class="product-detail-info">
+            <h1>A King's Sunset</h1>
+            <p class="body-2-accent">Kings Beach, Caloundra QLD</p>
+
+            <div class="product-divider"></div>
+
+            <p class="body-2">Photographer: Russell Stewart</p>
+            <p class="body-1-medium" id="product-price">$163.30</p>
+        
+            <form class="product-options">
+
+                <label class="option-group">
+                    <span class="body-2">Style</span>
+                    <select id="style-select" class="option-select">
+                        <option value="canvasTube" class="caption">Canvas (Rolled in Tube)</option>
+                        <option value="canvasHang" class="caption">Canvas (Ready to Hang)</option>
+                        <option value="acrylicBorderless" class="caption">Floating Acrylic (Borderless)</option>
+                        <option value="acrylicBorder" class="caption">Floating Acrylic (With Border)</option>
+                    </select>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </label>
+
+                <label class="option-group">
+                    <span class="body-2">Size</span>
+                    <select id="size-select" class="option-select">
+                        <option value="24" class="caption">24 inch</option>
+                        <option value="30" class="caption">30 inch</option>
+                        <option value="40" class="caption">40 inch</option>
+                        <option value="48" class="caption">48 inch</option>
+                        <option value="60" class="caption">60 inch</option>
+                        <option value="75" class="caption">75 inch</option>
+                    </select>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </label>
+            
+                <button type="button" class="add-cart-btn body-2-bold">
+                    Add to Cart
+                </button>
+
+            </form>
+
+            <div class="product-accordion">
+                <button class="dropdown-btn body-2-bold active" onclick="toggleDropdown(this)">
+                    Description
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="dropdown">
+                    <p class="caption-para">
+                        My commercial shoot in Caloundra finished at midday and my cloud app suggested that the sunset may be worth sticking around for, so I switched into 'Landscape Photographer Mode' (that's a special mode that allows a landscape photographer to turn brain dead for hours on end, in an effort to cope with the boredom of just sitting around waiting for light). <br><br>
+                        After such a long wait I was disappointed that I didn't get the high-cloud afterglow that I had hoped for, but the pre-sunset direct light on the green rocky shore of the headland made for quite an interesting foreground. - Cheers, Rusty.
+                    </p>
+                </div>
+
+                <button class="dropdown-btn body-2-bold" onclick="toggleDropdown(this)">
+                    About Our Prints
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="dropdown">
+                    <p class="caption-para">
+                        Note: Frame Previews are simulations and are not to scale - they are intended as a guide to colour combinations only. <br><br>
+                        Our premium Floating Acrylic & Canvas landscape prints are available for purchase via the gallery, while traditional Paper Matte & Frame presentation options are available on request. <br><br>
+                        All of our Canvas Prints are finished with Mirror Wrap sides that repeat the main image. We believe Mirror Wraps to be more pleasing than single colour sides. <br><br>
+                        Quoted image size represents the longest side of the overall image as previewed here and includes the decorative borders and mattes if selected. Frames are in addition to the quoted size. <br><br>
+                        A nominal shipping fee is applied during checkout, however large or heavy items may incur an additional fee. Similarly, delivery to remote locations may incur an additional fee. <br><br>
+                        International orders will incur an additional shipping fee and all local import duties and/or taxes are the responsability of the customer. Please contact us to discuss international shipping prior to placing an order.
+                    </p>
+                </div>
+
+                <button class="dropdown-btn body-2-bold" onclick="toggleDropdown(this)">
+                    Production & Delivery
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="dropdown">
+                    <p class="caption-para">
+                        10 working days are required for production and delivery. *Subject to Courier timing. <br><br>
+                        Each order is custom produced and shipped directly from the Brisbane print lab. A tracking number will be supplied once shipped. <br><br>
+                        For further information please visit the About menu link, or Contact Us to discuss your specific image requirements.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+    <section class="container" id="for-you">
+        <h1 class="section-title">For You</h1>
+        <div class="product-grid">
+            <figure class="product-card">
+                <article class="product-image">
+                    <img src="Assets/Donnybrook Dawn.jpg">
+                </article>
+                <div class="product-info">
+                    <p class="body-1-medium">Donnybrook Dawn</p>
+                    <p class="body-2-accent">Donnybrook, QLD</p>
+                    <p class="body-1-medium">$140.30</p>
+                </div>
+            </figure>
+
+            <figure class="product-card">
+                <article class="product-image">
+                    <img src="Assets/Reach to the Sky.jpg">
+                </article>
+                <div class="product-info">
+                    <p class="body-1-medium">Reach to the Sky</p>
+                    <p class="body-2-accent">Moreton Bay, QLD</p>
+                    <p class="body-1-medium">$140.30</p>
+                </div>
+            </figure>
+
+            <figure class="product-card">
+                <article class="product-image">
+                    <img src="Assets/Vorticity.jpg">
+                </article>
+                <div class="product-info">
+                    <p class="body-1-medium">Vorticity</p>
+                    <p class="body-2-accent">Woorim, QLD</p>
+                    <p class="body-1-medium">$103.50</p>
+                </div>
+            </figure>
+
+            <figure class="product-card">
+                <article class="product-image">
+                    <img src="Assets/An Autumn Lane.jpg">
+                </article>
+                <div class="product-info">
+                    <p class="body-1-medium">An Autumn Lane</p>
+                    <p class="body-2-accent">Gostwyck, NSW</p>
+                    <p class="body-1-medium">$108.10</p>
+                </div>
+            </figure>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-column">
+            <p class="caption">Contact</p>
+            <p class="caption">FAQ</p>
+            <p class="caption">Privacy Policy</p>
+            <p class="caption">Terms & Conditions</p>
+        </div>
+        <div class="footer-dropdown">
+            <button class="dropdown-btn caption" onclick="toggleDropdown(this)">
+                Australian Landscape Photography
+                <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="dropdown">
+                <p class="caption">Exclusive Framed Prints</p>
+                <p class="caption">Our Mounts and Frames</p>
+                <p class="caption">Fine Art Landscape Photography</p>
+                <p class="caption">Victorian Landscape Photography</p>
+                <p class="caption">Melbourne Landscape Photography</p>
+                <p class="caption">Sunshine Coast Landscape Photographer</p>
+                <p class="caption">Canvas Wall Prints and Framed Art</p>
+            </div>
+
+            <button class="dropdown-btn caption" onclick="toggleDropdown(this)">
+                Landscape Photography Help
+                <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="dropdown">
+                <p class="caption">Landscape Photography Help</p>
+                <p class="caption">Landscape Photography Blog</p>
+                <p class="caption">Australian Photography Workshops</p>
+                <p class="caption">Landscape Photography Tips</p>
+                <p class="caption">Top 10 Tips for the Landscape Photographer</p>
+                <p class="caption">How to Create Panoramic Images</p>
+                <p class="caption">How to Photograph Lightning & Storms</p>
+                <p class="caption">Focal Length vs. Perspective - What's the difference?</p>
+                <p class="caption">How to use Graduated Neutral Density Filters</p>
+            </div>
+
+            <button class="dropdown-btn caption" onclick="toggleDropdown(this)">
+                Popular Australian Galleries
+                <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="dropdown">
+                <p class="caption">Australian Panoramic Photography</p>
+                <p class="caption">Seascape Photos for Home</p>
+                <p class="caption">Australian Landscape Photography</p>
+                <p class="caption">Melbourne City Canvas</p>
+                <p class="caption">Sunshine Coast Panoramic Photos</p>
+                <p class="caption">Brisbane Landscape Photography</p>
+                <p class="caption">Gold Coast Landscape Photography</p>
+                <p class="caption">Fine Art Australian Landscape Prints</p>
+                <p class="caption">Interior Design Ideas - Big Wall Prints</p>
+            </div>
+        </div>
+        <div class="footer-social">
+            <figure class="social-link">
+                <img src="Assets/Facebook.png">
+            </figure>
+            <figure class="social-link">
+                <img src="Assets/Instagram.png">
+            </figure>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-divider"></div>
+        <p class="caption">© 2005-2024 AustralianLight Landscape Imagery Exclusive & Unique Australian Landscape Photography</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
