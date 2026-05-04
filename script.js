@@ -85,54 +85,95 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const prices = {
-    canvasTube: {
-        24: 144.90,
-        30: 211.60,
-        40: 345.00,
-        48: 476.10,
-        60: 699.20,
-        75: 1076.40
+    fireRain: {
+        canvasTube: {
+            24: 144.90,
+            30: 211.60,
+            40: 345.00,
+            48: 476.10,
+            60: 699.20,
+            75: 1076.40
+        },
+        canvasHang: {
+            24: 352.80,
+            30: 466.20,
+            40: 678.30,
+            48: 869.40,
+            60: 1197.00,
+            75: 1665.30
+        },
+        acrylicBorderless: {
+            24: 396.90,
+            30: 556.50,
+            40: 896.70,
+            48: 1232.70,
+            60: 1848.00,
+            75: 2801.40
+        },
+        acrylicBorder: {
+            24: 396.90,
+            30: 556.50,
+            40: 896.70,
+            48: 1232.70,
+            60: 1848.00,
+            75: 2801.40
+        }
     },
-    canvasHang: {
-        24: 352.80,
-        30: 466.20,
-        40: 678.30,
-        48: 869.40,
-        60: 1197.00,
-        75: 1665.30
-    },
-    acrylicBorderless: {
-        24: 396.90,
-        30: 556.50,
-        40: 896.70,
-        48: 1232.70,
-        60: 1848.00,
-        75: 2801.40
-    },
-    acrylicBorder: {
-        24: 396.90,
-        30: 556.50,
-        40: 896.70,
-        48: 1232.70,
-        60: 1848.00,
-        75: 2801.40
+
+    kingsSunset: {
+        canvasTube: {
+            24: 163.30,
+            30: 241.50,
+            40: 402.50,
+            48: 554.30,
+            60: 832.60,
+        },
+        canvasHang: {
+            24: 384.30,
+            30: 512.40,
+            40: 751.80,
+            48: 970.20,
+            60: 1341.90
+        },
+        acrylicBorderless: {
+            24: 449.40,
+            30: 636.30,
+            40: 1037.40,
+            48: 1434.30,
+            60: 2158.80
+        },
+        acrylicBorder: {
+            24: 449.40,
+            30: 636.30,
+            40: 1037.40,
+            48: 1434.30,
+            60: 2158.80
+        }
     }
 };
+
+const productDetail = document.querySelector(".product-detail");
+const productId = productDetail?.dataset.product;
 
 const styleSelect = document.getElementById("style-select");
 const sizeSelect = document.getElementById("size-select");
 const priceText = document.getElementById("product-price");
 
 function updatePrice() {
+    if (!productId || !styleSelect || !sizeSelect || !priceText) return;
+    
     const style = styleSelect.value;
     const size = sizeSelect.value;
-    const price = prices[style][size];
+    const price = prices[productId][style][size];
 
     priceText.textContent = "$" + price.toFixed(2);
 }
 
-styleSelect.addEventListener("change", updatePrice);
-sizeSelect.addEventListener("change", updatePrice);
+if (styleSelect && sizeSelect && priceText) {
+    styleSelect.addEventListener("change", updatePrice);
+    sizeSelect.addEventListener("change", updatePrice);
+    updatePrice();
+}
 
 function toggleDetailDropdown(button) {
     const dropdown = button.nextElementSibling;
