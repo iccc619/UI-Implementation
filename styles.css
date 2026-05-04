@@ -442,7 +442,7 @@ select {
     mix-blend-mode: multiply;
 }
 
-.breadcrumb {
+.breadcrumb, .quicknav {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -450,15 +450,15 @@ select {
     padding: 130px 120px 40px 120px;
 }
 
-.breadcrumb img {
+.breadcrumb img, .quicknav img {
     opacity: 60%;
 }
 
-.breadcrumb a {
+.breadcrumb a, .quicknav a {
     color: var(--color-text-secondary);
 }
 
-.breadcrumb a:hover {
+.breadcrumb a:hover, .quicknav a:hover {
     color: var(--color-accent);
 }
 

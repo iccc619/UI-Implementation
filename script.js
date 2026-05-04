@@ -34,7 +34,7 @@ function closeFilter() {
 }
 
 function toggleDropdown(button) {
-    const container = button.closest(".sidebar, #product-filter");
+    const container = button.closest(".sidebar, #product-filter, .product-accordion");
     const allButtons = document.querySelectorAll(".dropdown-btn");
     // close the previous button when opening a new one//
     allButtons.forEach(btn => {
@@ -60,6 +60,29 @@ function selectSort(button) {
     document.getElementById("sort-menu").classList.remove("open");
     document.querySelector(".sort-btn").classList.remove("active");
 }
+
+function savePreviousPage(link) {
+    const title = document.querySelector(".section-title")?.textContent.trim();
+
+    sessionStorage.setItem("previousPageTitle", title);
+    sessionStorage.setItem("previousPageUrl", window.location.href);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const link = document.querySelector(".quicknav a");
+    if (!link) return;
+
+    const title = sessionStorage.getItem("previousPageTitle");
+    const url = sessionStorage.getItem("previousPageUrl");
+
+    if (title && url) {
+        link.textContent = title;
+        link.href = url;
+    } else {
+        link.textContent = "Back";
+        link.href = "javascript:history.back()";
+    }
+});
 
 const prices = {
     canvasTube: {
