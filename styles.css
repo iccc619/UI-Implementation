@@ -106,6 +106,13 @@ main {
     margin: 0;
 }
 
+.caption-para {
+    font-weight: 400;
+    font-size: 12px;
+    margin: 0;
+    line-height: 20px;
+}
+
 a {
     text-decoration: none;
     color: var(--color-text-primary);
@@ -717,8 +724,31 @@ select {
     background-color: var(--color-accent-light);
 }
 
-#for-you {
-    margin-top: 80px;
+.product-accordion {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-accordion .dropdown-btn {
+    width: 100%;
+    min-height: 52px;
+    padding: 0;
+}
+
+.product-accordion .dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.product-accordion .dropdown-btn.active + .dropdown {
+    max-height: 500px;
+}
+
+.product-accordion .dropdown p {
+    padding: 10px 0;
+    color: var(--color-text-secondary);
 }
 
 .footer {
@@ -855,6 +885,11 @@ select {
         scroll-snap-type: none;
     }
 
+    .product-detail {
+        padding: 0 60px;
+        gap: 60px;
+    }
+
     .footer-grid {
         padding: 80px 60px;
     }
@@ -918,6 +953,22 @@ select {
 
     .listing-toolbar {
         margin-bottom: 20px;
+    }
+
+    .product-detail {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .product-accordion, .product-options {
+        margin-top: 10px;
+    }
+
+    .product-detail-image {
+        width: 100vw;
+        margin-left: calc(-1 * 20px);
     }
 
     .footer {
