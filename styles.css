@@ -634,6 +634,34 @@ figure {
     row-gap: 40px;
 }
 
+.product-detail {
+    display: grid;
+    grid-template-columns: 1.6fr 0.8fr;
+    gap: 120px;
+    align-items: start;
+    padding: 0 120px;
+}
+
+.product-detail-image img {
+    width: 100%;
+}
+
+.product-detail-info {
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-divider {
+    height: 1px;
+    background-color: var(--color-bg-tertiary);
+}
+
+#for-you {
+    margin-top: 80px;
+}
+
 .footer {
     background-color: var(--color-bg-secondary);
     margin-top: 80px;
