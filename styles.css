@@ -215,7 +215,7 @@ img {
 }
 
 .sidebar-main {
-    margin-top: 80px;
+    margin: 80px 0 40px 0;
 }
 
 .sidebar a, .sidebar p, 

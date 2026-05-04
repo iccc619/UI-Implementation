@@ -18,11 +18,23 @@ function closeNav() {
 
     // reset all dropdowns
     const buttons = sidebar.querySelectorAll(".dropdown-btn");
+    buttons.forEach(btn => btn.classList.remove("active"));
+}
 
+function openFilter() {
+    document.getElementById("product-filter").style.width = "340px";
+}
+
+function closeFilter() {
+    const filter = document.getElementById("product-filter");
+    filter.style.width = "0";
+
+    const buttons = filter.querySelectorAll(".dropdown-btn");
     buttons.forEach(btn => btn.classList.remove("active"));
 }
 
 function toggleDropdown(button) {
+    const container = button.closest(".sidebar, #product-filter");
     const allButtons = document.querySelectorAll(".dropdown-btn");
     // close the previous button when opening a new one//
     allButtons.forEach(btn => {
