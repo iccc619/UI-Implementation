@@ -218,7 +218,7 @@ img {
     margin-top: 80px;
 }
 
-.sidebar a,
+.sidebar a, .sidebar p, 
 .dropdown-btn {
     width: 100%;
     min-height: 60px;
@@ -233,6 +233,10 @@ img {
     border: none;
     color: var(--color-text-primary);
     cursor: pointer;
+}
+
+.sidebar p {
+    cursor: default;
 }
 
 .sidebar-bottom a,
@@ -268,6 +272,82 @@ img {
 
 .dropdown-btn.active .arrow {
     transform: rotate(180deg);
+}
+
+.price-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 40px;
+}
+
+.price-input {
+    width: 100%;
+    height: 42px;
+    border: 1px solid var(--color-text-tertiary);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--color-text-primary);
+    padding: 0 10px;
+}
+
+.price-input::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+.price-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+.price-dash {
+    color: var(--color-text-tertiary);
+}
+
+.filter-options {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 40px;
+}
+
+.filter-option {
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    cursor: pointer;
+}
+
+.filter-option input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--color-text-tertiary);
+    border-radius: 50%;
+    position: relative;
+}
+
+.filter-option input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease;
+}
+
+.filter-option input[type="checkbox"]:checked::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.filter-option input[type="checkbox"]:hover {
+    border-color: var(--color-accent);
 }
 
 .sidebar-divider {
@@ -477,6 +557,32 @@ img {
 
 .product-info .body-2-accent {
     margin-bottom: 12px;
+}
+
+.product-list {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 120px;
+}
+
+.listing-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.filter-btn,
+.sort-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-text-primary);
+}
+
+.filter-btn img {
+    width: 20px;
+    height: 20px;
 }
 
 .footer {

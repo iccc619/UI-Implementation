@@ -133,7 +133,95 @@
         <span>Latest Releases</span>
     </nav>
 
-    
+    <section class="product-list">
+        <h1 class="section-title">Latest Releases</h1>
+
+        <div class="listing-toolbar">
+
+            <div class="sidebar" id="product-filter">
+                
+                <div>
+                    <button class="closebtn" onclick="closeFilter()" aria-label="Close menu">×</button>
+                </div>
+                
+                <div class="sidebar-main">
+
+                    <p class="body-1-medium">Filter by</p>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Price
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                
+                    <div class="dropdown">
+                        <div class="price-filter">
+                            <input type="number" placeholder="Lowest Price" class="price-input caption">
+                            <span class="price-dash">–</span>
+                            <input type="number" placeholder="Highest Price" class="price-input caption">
+                        </div>
+                    </div>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Subject
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <div class="dropdown filter-options">
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="ocean">
+                            <span>Ocean</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="mountain">
+                            <span>Mountain</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="forest">
+                            <span>Forest</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="rural">
+                            <span>Rural</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="city">
+                            <span>City</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="sunrise-sunset">
+                            <span>Sunrise / Sunset</span>
+                        </label>
+                    </div>
+                
+                </div>
+
+            </div>
+
+            <button class="filter-btn body-2" aria-label="Open filter" onclick="openFilter()">
+                Filter
+                <img src="Assets/Filter.svg" alt="">
+            </button>
+
+            <button class="sort-btn body-2" aria-label="Sort products">
+                Sort By
+                <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+        </div>
+    </section>
+
+
     
 </main>
 
