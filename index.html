@@ -106,7 +106,7 @@
             <button class="menu-btn" aria-label="Open menu" onclick="openNav()">
                 <img src="Assets/Menu.svg" alt="">
             </button>
-            <button class="search-btn" aria-label="Search">
+            <button class="search-btn" aria-label="Search" onclick="openSearch()">
                 <img src="Assets/Search.svg" alt="">
             </button>
         </div>
@@ -250,6 +250,31 @@
     </section>
 
 </main>
+
+<aside class="search-panel" id="search-panel">
+    <div class="search-inner">
+        <div class="search-top">
+            <button class="search-back-btn" onclick="closeSearch()" aria-label="Close search">
+                <img src="Assets/Arrow.svg" style="transform: scaleX(-1);">
+            </button>
+
+            <div class="search-input-wrap">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    class="search-input body-2" 
+                    placeholder="Search key words"
+                    oninput="handleSearchInput()"
+                >
+                <button class="search-submit-btn" aria-label="Search">
+                    <img src="Assets/Search.svg" alt="">
+                </button>
+            </div>
+        </div>
+
+            
+
+</aside>
 
 <footer class="footer">
     <div class="footer-grid">

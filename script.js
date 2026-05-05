@@ -222,3 +222,17 @@ function setPortraitImageClosedHeight() {
 
 window.addEventListener("load", setPortraitImageClosedHeight);
 window.addEventListener("resize", setPortraitImageClosedHeight);
+
+function openSearch() {
+    document.getElementById("search-panel").classList.add("open");
+    document.getElementById("search-input").focus();
+}
+
+function closeSearch() {
+    const panel = document.getElementById("search-panel");
+    const input = document.getElementById("search-input");
+
+    panel.classList.remove("open");
+    panel.classList.remove("has-query");
+    input.value = "";
+}
