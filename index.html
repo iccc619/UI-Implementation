@@ -259,8 +259,8 @@
             </button>
 
             <div class="search-input-wrap">
-                <input type="text" id="search-input" class="search-input body-2" placeholder="Search key words" oninput="handleSearchInput()">
-                <button class="search-submit-btn" aria-label="Search">
+                <input type="text" id="search-input" class="search-input body-2" placeholder="Search key words">
+                <button class="search-submit-btn" aria-label="Search" onclick="submitSearch()">
                     <img src="Assets/Search.svg" alt="">
                 </button>
             </div>
@@ -342,8 +342,96 @@
                     </figure>
                 </div>
             </section>
+        </div>
+        
+        <div class="search-results" id="search-results">
+            <section class="search-section">
+                <div class="search-section-head">
+                    <h2>Suggested Prints</h2>
+                    <a href="sunset.html" class="caption">View All</a>
+                </div>
+
+                <div class="search-product-grid">
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/A Darwin Sunset.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Yallingup Skydance</p>
+                            <p class="body-2-accent">Yallingup Beach, WA</p>
+                            <p class="body-1-medium">$124.20</p>
+                        </div>
+                    </figure>
+
+                    <a href="a_king's_sunset.html" class="product-card" onclick="savePreviousPage(this)">
+                        <article class="product-image">
+                            <img src="Assets/A King's Sunset.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">A King's Sunset</p>
+                            <p class="body-2-accent">Kings Beach, Caloundra QLD</p>
+                            <p class="body-1-medium">$163.30</p>
+                        </div>
+                    </a>
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/A Simple Country Sunset.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Yallingup Skydance</p>
+                            <p class="body-2-accent">Yallingup Beach, WA</p>
+                            <p class="body-1-medium">$124.20</p>
+                        </div>
+                    </figure>
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/A Tropical Sunset.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Yallingup Skydance</p>
+                            <p class="body-2-accent">Yallingup Beach, WA</p>
+                            <p class="body-1-medium">$124.20</p>
+                        </div>
+                    </figure>
+
+                </div>
+            </section>
+
+            <section class="search-section">
+                <div class="search-section-head">
+                    <h2>Suggested Blogs</h2>
+                    <a href="#" class="caption">View All</a>
+                </div>
+
+                <article class="search-blog-card">
+                    <img src="Assets/Blog_1.jpg" alt="">
+                    <div>
+                        <p class="body-2-bold">AustralianLight and Gallery 6 31</p>
+                        <p class="caption-para search-blog-text">
+                            With the official opening of Brisbane's newest Art Gallery Gallery 6 31, we now have samples of our Canvas...
+                        </p>
+                        <p class="caption-accent">Tuesday, May 21, 2019</p>
+                    </div>
+                </article>
+
+                <article class="search-blog-card">
+                    <img src="Assets/Blog_2.jpg" alt="">
+                    <div>
+                        <p class="body-2-bold">10 Tips for the Landscape Photography Beginner</p>
+                        <p class="caption-para search-blog-text">
+                            It's quite common for us to be engaged by other photographers when we are out shooting our...
+                        </p>
+                        <p class="caption-accent">Sunday, February 25, 2018</p>
+                    </div>
+                </article>
+            </section>
 
         </div>
+
+    </div>
 
 </aside>
 

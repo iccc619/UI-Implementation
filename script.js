@@ -237,11 +237,13 @@ function closeSearch() {
     input.value = "";
 }
 
-function handleSearchInput() {
+function submitSearch() {
     const panel = document.getElementById("search-panel");
     const input = document.getElementById("search-input");
 
-    if (input.value.trim().length > 0) {
+    const value = input.value.trim().toLowerCase();
+
+    if (value.includes("sunset")) {
         panel.classList.add("has-query");
     } else {
         panel.classList.remove("has-query");
@@ -250,10 +252,7 @@ function handleSearchInput() {
 
 function fillSearch(value) {
     const input = document.getElementById("search-input");
-    const panel = document.getElementById("search-panel");
-
     input.value = value;
-    panel.classList.add("has-query");
 }
 
 function deleteHistory(btn) {
