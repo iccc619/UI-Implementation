@@ -84,6 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+function saveSearchNavigation(title, url) {
+    sessionStorage.setItem("previousPageTitle", title);
+    sessionStorage.setItem("previousPageUrl", url);
+}
+
 const prices = {
     fireRain: {
         canvasTube: {

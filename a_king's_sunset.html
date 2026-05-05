@@ -106,7 +106,7 @@
             <button class="menu-btn" aria-label="Open menu" onclick="openNav()">
                 <img src="Assets/Menu.svg" alt="">
             </button>
-            <button class="search-btn" aria-label="Search">
+            <button class="search-btn" aria-label="Search" onclick="openSearch()">
                 <img src="Assets/Search.svg" alt="">
             </button>
         </div>
@@ -283,6 +283,187 @@
     </section>
 
 </main>
+
+<aside class="search-panel" id="search-panel">
+    <div class="search-inner">
+        <div class="search-top">
+            <button class="search-back-btn" onclick="closeSearch()" aria-label="Close search">
+                <img src="Assets/Arrow.svg" style="transform: scaleX(-1);">
+            </button>
+
+            <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input body-2" placeholder="Search key words">
+                <button class="search-submit-btn" aria-label="Search" onclick="submitSearch()">
+                    <img src="Assets/Search.svg" alt="">
+                </button>
+            </div>
+        </div>
+
+        <div class="search-empty" id="search-empty">
+            <section class="search-history">
+                <h2>History</h2>
+
+                <div class="history-list">
+                    <div class="history-item body-2">
+                        <span class="history-text clickable" onclick="fillSearch('Sunset')">
+                            Sunset
+                        </span>
+                        <button class="history-delete body-1" onclick="deleteHistory(this)">×</button>
+                    </div>
+                    <div class="history-item body-2">
+                        <span class="history-text">
+                            Darling Harbour
+                        </span>
+                        <button class="history-delete body-1" onclick="deleteHistory(this)">×</button>
+                    </div>
+                
+                    <div class="history-item body-2">
+                        <span class="history-text">
+                            Ocean
+                        </span>
+                        <button class="history-delete body-1" onclick="deleteHistory(this)">×</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="search-section">
+                <h2>For You</h2>
+
+                <div class="search-product-grid">
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/Donnybrook Dawn.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Donnybrook Dawn</p>
+                            <p class="body-2-accent">Donnybrook, QLD</p>
+                            <p class="body-1-medium">$140.30</p>
+                        </div>
+                    </figure>
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/OS_3.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Parhelion</p>
+                            <p class="body-2-accent">Woorim, Bribie Island, QLD</p>
+                            <p class="body-1-medium">$124.20</p>
+                        </div>
+                    </figure>
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/OS_7.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Yallingup Beach</p>
+                            <p class="body-2-accent">Yallingup Beach, WA</p>
+                            <p class="body-1-medium">$103.50</p>
+                        </div>
+                    </figure>
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/OS_5.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Yallingup Skydance</p>
+                            <p class="body-2-accent">Yallingup Beach, WA</p>
+                            <p class="body-1-medium">$124.20</p>
+                        </div>
+                    </figure>
+                </div>
+            </section>
+        </div>
+        
+        <div class="search-results" id="search-results">
+            <section class="search-section">
+                <div class="search-section-head">
+                    <h2>Suggested Prints</h2>
+                    <a href="sunset.html" class="caption" onclick="saveSearchNavigation('Search Results', 'sunset.html')">View All</a>
+                </div>
+
+                <div class="search-product-grid">
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/A Darwin Sunset.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Yallingup Skydance</p>
+                            <p class="body-2-accent">Yallingup Beach, WA</p>
+                            <p class="body-1-medium">$124.20</p>
+                        </div>
+                    </figure>
+
+                    <a href="a_king's_sunset.html" class="product-card" onclick="saveSearchNavigation('Search Results', 'sunset.html')">
+                        <article class="product-image">
+                            <img src="Assets/A King's Sunset.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">A King's Sunset</p>
+                            <p class="body-2-accent">Kings Beach, Caloundra QLD</p>
+                            <p class="body-1-medium">$163.30</p>
+                        </div>
+                    </a>
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/A Simple Country Sunset.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Yallingup Skydance</p>
+                            <p class="body-2-accent">Yallingup Beach, WA</p>
+                            <p class="body-1-medium">$124.20</p>
+                        </div>
+                    </figure>
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/A Tropical Sunset.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Yallingup Skydance</p>
+                            <p class="body-2-accent">Yallingup Beach, WA</p>
+                            <p class="body-1-medium">$124.20</p>
+                        </div>
+                    </figure>
+
+                </div>
+            </section>
+
+            <section class="search-section">
+                <div class="search-section-head">
+                    <h2>Suggested Blogs</h2>
+                    <a href="#" class="caption">View All</a>
+                </div>
+
+                <article class="search-blog-card">
+                    <img src="Assets/Blog_1.jpg" alt="">
+                    <div>
+                        <p class="body-2-bold">AustralianLight and Gallery 6 31</p>
+                        <p class="caption-para search-blog-text">
+                            With the official opening of Brisbane's newest Art Gallery Gallery 6 31, we now have samples of our Canvas...
+                        </p>
+                        <p class="caption-accent">Tuesday, May 21, 2019</p>
+                    </div>
+                </article>
+
+                <article class="search-blog-card">
+                    <img src="Assets/Blog_2.jpg" alt="">
+                    <div>
+                        <p class="body-2-bold">10 Tips for the Landscape Photography Beginner</p>
+                        <p class="caption-para search-blog-text">
+                            It's quite common for us to be engaged by other photographers when we are out shooting our...
+                        </p>
+                        <p class="caption-accent">Sunday, February 25, 2018</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+</aside>
 
 <footer class="footer">
     <div class="footer-grid">
