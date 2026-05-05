@@ -468,7 +468,11 @@ select {
     color: var(--color-text-tertiary);
 }
 
-.search-history h2 {
+.search-section {
+    margin-top: 30px;
+}
+
+.search-section h2, .search-history h2 {
     margin-bottom: 20px;
 }
 
@@ -498,6 +502,12 @@ select {
 
 .history-delete:hover {
     color: var(--color-accent);
+}
+
+.search-product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .hero {
