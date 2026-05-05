@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="nav">
+        <div class="nav-left">
+
+            <div class="sidebar" id="site-menu">
+                
+                <div>
+                    <button class="closebtn" onclick="closeNav()" aria-label="Close menu">×</button>
+                </div>
+                
+                <div class="sidebar-main">
+                    <a href="latest_releases.html" class="body-1-medium">Latest Releases</a>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        By Photographer
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown">
+                        <p class="body-2">Bernie Zajac</p>
+                        <p class="body-2">Russels Stewart</p>
+                    </div>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Print Galleries
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown">
+                        <a href="ocean.html" class="body-2">Ocean / Seascape</a>
+                        <p class="body-2">Mountain / Forest</p>
+                        <p class="body-2">Rural / Country</p>
+                        <p class="body-2">Urban / City</p>
+                        <p class="body-2">Panorama</p>
+                        <p class="body-2">B&W / Toned</p>
+                        <p class="body-2">Overseas Travel</p>
+                    </div>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        About
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown">
+                        <p class="body-2">About Us</p>
+                        <p class="body-2">Our Mounts & Frames</p>
+                        <p class="body-2">Our Print Process</p>
+                        <p class="body-2">Our Print Sizes</p>
+                    </div>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Blog
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown">
+                        <p class="body-2">AusLight SpotLights</p>
+                        <a href="general.html" class="body-2">General</a>
+                        <p class="body-2">Image Previews</p>
+                        <p class="body-2">New Print Releases</p>
+                        <p class="body-2">New Products</p>
+                        <p class="body-2">Photography Adventures</p>
+                        <p class="body-2">Photography Tips</p>
+                    </div>
+
+                    <p class="body-1-medium">Workshops</p>
+                </div>
+
+                <div class="sidebar-divider"></div>
+
+                <div class="sidebar-bottom">
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        AUD / English
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown">
+                        <p class="body-2">AUD / English</p>
+                        <p class="body-2">USD / English</p>
+                    </div>
+
+                    <p class="body-1-medium">Log In</p>
+                    <p class="body-1-medium">Contact Us</p>
+                </div>
+
+            </div>
+
+            <button class="menu-btn" aria-label="Open menu" onclick="openNav()">
+                <img src="Assets/Menu.svg" alt="">
+            </button>
+            <button class="search-btn" aria-label="Search" onclick="openSearch()">
+                <img src="Assets/Search.svg" alt="">
+            </button>
+        </div>
+
+        <div class="logo">
+            <button class="logo-btn" aria-label="Logo">
+                <a href="index.html"><img src="Assets/Logo.svg" alt=""></a>
+            </button>
+        </div>
+
+        <div class="nav-right">
+            <button class="cart-btn" aria-label="Shopping cart">
+                <img src="Assets/Cart.svg" alt="">
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main class="page-shell">
+
+    <nav class="breadcrumb body-1">
+        <a href="index.html">Home</a>
+        <img src="Assets/Arrow.svg">
+        <button onclick="openSearch()">
+            <p class="body-1">Search</p>
+        </button>
+        <img src="Assets/Arrow.svg">
+        <span>Prints (17)</span>
+    </nav>
+
+    <section class="product-list container">
+        <h1 class="section-title">Sunset</h1>
+
+        <div class="listing-toolbar">
+
+            <div class="sidebar" id="product-filter">
+                
+                <div>
+                    <button class="closebtn" onclick="closeFilter()" aria-label="Close menu">×</button>
+                </div>
+                
+                <div class="sidebar-main">
+
+                    <p class="body-1-medium">Filter by</p>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Price
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                
+                    <div class="dropdown">
+                        <div class="price-filter">
+                            <input type="number" placeholder="Lowest Price" class="price-input caption">
+                            <span class="price-dash">–</span>
+                            <input type="number" placeholder="Highest Price" class="price-input caption">
+                        </div>
+                    </div>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Subject
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <div class="dropdown filter-options">
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="ocean">
+                            <span>Ocean</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="mountain">
+                            <span>Mountain</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="forest">
+                            <span>Forest</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="rural">
+                            <span>Rural</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="city">
+                            <span>City</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="sunrise-sunset">
+                            <span>Sunrise / Sunset</span>
+                        </label>
+                    </div>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Colour
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <div class="dropdown filter-options">
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="ocean">
+                            <span>Colour</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="mountain">
+                            <span>Black & White</span>
+                        </label>
+                    </div>
+                
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Orientation
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <div class="dropdown filter-options">
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="ocean">
+                            <span>Landscape</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="mountain">
+                            <span>Portrait</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="forest">
+                            <span>Square</span>
+                        </label>
+                    </div>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Size
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <div class="dropdown filter-options">
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="ocean">
+                            <span>20 inch</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="mountain">
+                            <span>24 inch</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="forest">
+                            <span>30 inch</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="rural">
+                            <span>40 inch</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="city">
+                            <span>48 inch</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="sunrise-sunset">
+                            <span>60 inch</span>
+                        </label>
+                    </div>
+
+                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+                        Location
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <div class="dropdown filter-options">
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="ocean">
+                            <span>ACT</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="mountain">
+                            <span>NSW</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="forest">
+                            <span>NT</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="rural">
+                            <span>QLD</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="city">
+                            <span>SA</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="sunrise-sunset">
+                            <span>TAS</span>
+                        </label>
+
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="city">
+                            <span>VIC</span>
+                        </label>
+                    
+                        <label class="filter-option body-2">
+                            <input type="checkbox" name="subject" value="sunrise-sunset">
+                            <span>WA</span>
+                        </label>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <button class="filter-btn body-2" aria-label="Open filter" onclick="openFilter()">
+                Filter
+                <img src="Assets/Filter.svg" alt="">
+            </button>
+
+            <div class="sort-wrapper">
+                <button class="sort-btn body-2" aria-label="Sort products" onclick="toggleSort()">
+                    <span id="sort-label">Sort By</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+    
+                <div class="sort-menu" id="sort-menu">
+                    <button class="body-2" onclick="selectSort(this)">Recommended</button>
+                    <button class="body-2" onclick="selectSort(this)">Best Selling</button>
+                    <button class="body-2" onclick="selectSort(this)">Alphabetically, A-Z</button>
+                    <button class="body-2" onclick="selectSort(this)">Alphabetically, Z-A</button>
+                    <button class="body-2" onclick="selectSort(this)">Price, high to low</button>
+                    <button class="body-2" onclick="selectSort(this)">Price, low to high</button>
+                    <button class="body-2" onclick="selectSort(this)">Date, old to new</button>
+                    <button class="body-2" onclick="selectSort(this)">Date, new to old</button>
+                </div>
+            </div>
+            
+
+        </div>
+
+        <article class="products">
+            <figure class="product-card">
+                <article class="product-image">
+                    <img src="Assets/LR_1.jpg">
+                </article>
+                <div class="product-info">
+                    <p class="body-1-medium">Entropy</p>
+                    <p class="body-2-accent">Victorian High Country</p>
+                    <p class="body-1-medium">$140.30</p>
+                </div>
+            </figure>
+
+            <a href="fire_and_rain.html" class="product-card" onclick="savePreviousPage(this)">
+                <article class="product-image">
+                    <img src="Assets/Fire and Rain.jpg">
+                </article>
+                <div class="product-info">
+                    <p class="body-1-medium">Fire and Rain</p>
+                    <p class="body-2-accent">Cardwell, FNQ</p>
+                    <p class="body-1-medium">$144.90</p>
+                </div>
+            </a>
+
+            <figure class="product-card">
+                <article class="product-image">
+                    <img src="Assets/Reach to the Sky.jpg">
+                </article>
+                <div class="product-info">
+                    <p class="body-1-medium">Reach to the Sky</p>
+                    <p class="body-2-accent">Moreton Bay, QLD</p>
+                    <p class="body-1-medium">$140.30</p>
+                </div>
+            </figure>
+
+            <figure class="product-card">
+                <article class="product-image">
+                    <img src="Assets/LR_4.jpg">
+                </article>
+                <div class="product-info">
+                    <p class="body-1-medium">The Wilds of Bogong High Plains</p>
+                    <p class="body-2-accent">Victorian High Country</p>
+                    <p class="body-1-medium">$78.20</p>
+                </div>
+            </figure>
+
+            <figure class="product-card">
+                <article class="product-image">
+                    <img src="Assets/LR_5.jpg">
+                </article>
+                <div class="product-info">
+                    <p class="body-1-medium">Falls Creek Mountain Stream</p>
+                    <p class="body-2-accent">Falls Creek, VIC</p>
+                    <p class="body-1-medium">$140.30</p>
+                </div>
+            </figure>
+
+            <figure class="product-card">
+                <article class="product-image">
+                    <img src="Assets/LR_6.jpg">
+                </article>
+                <div class="product-info">
+                    <p class="body-1-medium">Ridge Runners</p>
+                    <p class="body-2-accent">Victorian High Country</p>
+                    <p class="body-1-medium">$78.20</p>
+                </div>
+            </figure>
+
+            <figure class="product-card">
+                <article class="product-image">
+                    <img src="Assets/LR_7.jpg">
+                </article>
+                <div class="product-info">
+                    <p class="body-1-medium">Matlock Tree Detail</p>
+                    <p class="body-2-accent">Victorian High Country</p>
+                    <p class="body-1-medium">$124.20</p>
+                </div>
+            </figure>
+
+            <figure class="product-card">
+                <article class="product-image">
+                    <img src="Assets/LR_8.jpg">
+                </article>
+                <div class="product-info">
+                    <p class="body-1-medium">Entanglement</p>
+                    <p class="body-2-accent">Mt Buffalo National Park, VIC</p>
+                    <p class="body-1-medium">$144.30</p>
+                </div>
+            </figure>
+        </article>
+
+    </section>
+
+
+    
+</main>
+
+<aside class="search-panel" id="search-panel">
+    <div class="search-inner">
+        <div class="search-top">
+            <button class="search-back-btn" onclick="closeSearch()" aria-label="Close search">
+                <img src="Assets/Arrow.svg" style="transform: scaleX(-1);">
+            </button>
+
+            <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input body-2" placeholder="Search key words">
+                <button class="search-submit-btn" aria-label="Search" onclick="submitSearch()">
+                    <img src="Assets/Search.svg" alt="">
+                </button>
+            </div>
+        </div>
+
+        <div class="search-empty" id="search-empty">
+            <section class="search-history">
+                <h2>History</h2>
+
+                <div class="history-list">
+                    <div class="history-item body-2">
+                        <span class="history-text clickable" onclick="fillSearch('Sunset')">
+                            Sunset
+                        </span>
+                        <button class="history-delete body-1" onclick="deleteHistory(this)">×</button>
+                    </div>
+                    <div class="history-item body-2">
+                        <span class="history-text">
+                            Darling Harbour
+                        </span>
+                        <button class="history-delete body-1" onclick="deleteHistory(this)">×</button>
+                    </div>
+                
+                    <div class="history-item body-2">
+                        <span class="history-text">
+                            Ocean
+                        </span>
+                        <button class="history-delete body-1" onclick="deleteHistory(this)">×</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="search-section">
+                <h2>For You</h2>
+
+                <div class="search-product-grid">
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/Donnybrook Dawn.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Donnybrook Dawn</p>
+                            <p class="body-2-accent">Donnybrook, QLD</p>
+                            <p class="body-1-medium">$140.30</p>
+                        </div>
+                    </figure>
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/OS_3.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Parhelion</p>
+                            <p class="body-2-accent">Woorim, Bribie Island, QLD</p>
+                            <p class="body-1-medium">$124.20</p>
+                        </div>
+                    </figure>
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/OS_7.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Yallingup Beach</p>
+                            <p class="body-2-accent">Yallingup Beach, WA</p>
+                            <p class="body-1-medium">$103.50</p>
+                        </div>
+                    </figure>
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/OS_5.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Yallingup Skydance</p>
+                            <p class="body-2-accent">Yallingup Beach, WA</p>
+                            <p class="body-1-medium">$124.20</p>
+                        </div>
+                    </figure>
+                </div>
+            </section>
+        </div>
+        
+        <div class="search-results" id="search-results">
+            <section class="search-section">
+                <div class="search-section-head">
+                    <h2>Suggested Prints</h2>
+                    <a href="sunset.html" class="caption" onclick="saveSearchNavigation('Search Results', 'sunset.html')">View All</a>
+                </div>
+
+                <div class="search-product-grid">
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/A Darwin Sunset.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Yallingup Skydance</p>
+                            <p class="body-2-accent">Yallingup Beach, WA</p>
+                            <p class="body-1-medium">$124.20</p>
+                        </div>
+                    </figure>
+
+                    <a href="a_king's_sunset.html" class="product-card" onclick="saveSearchNavigation('Search Results', 'sunset.html')">
+                        <article class="product-image">
+                            <img src="Assets/A King's Sunset.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">A King's Sunset</p>
+                            <p class="body-2-accent">Kings Beach, Caloundra QLD</p>
+                            <p class="body-1-medium">$163.30</p>
+                        </div>
+                    </a>
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/A Simple Country Sunset.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Yallingup Skydance</p>
+                            <p class="body-2-accent">Yallingup Beach, WA</p>
+                            <p class="body-1-medium">$124.20</p>
+                        </div>
+                    </figure>
+
+                    <figure class="product-card">
+                        <article class="product-image">
+                            <img src="Assets/A Tropical Sunset.jpg">
+                        </article>
+                        <div class="product-info">
+                            <p class="body-1-medium">Yallingup Skydance</p>
+                            <p class="body-2-accent">Yallingup Beach, WA</p>
+                            <p class="body-1-medium">$124.20</p>
+                        </div>
+                    </figure>
+
+                </div>
+            </section>
+
+            <section class="search-section">
+                <div class="search-section-head">
+                    <h2>Suggested Blogs</h2>
+                    <a href="#" class="caption">View All</a>
+                </div>
+
+                <article class="search-blog-card">
+                    <img src="Assets/Blog_1.jpg" alt="">
+                    <div>
+                        <p class="body-2-bold">AustralianLight and Gallery 6 31</p>
+                        <p class="caption-para search-blog-text">
+                            With the official opening of Brisbane's newest Art Gallery Gallery 6 31, we now have samples of our Canvas...
+                        </p>
+                        <p class="caption-accent">Tuesday, May 21, 2019</p>
+                    </div>
+                </article>
+
+                <article class="search-blog-card">
+                    <img src="Assets/Blog_2.jpg" alt="">
+                    <div>
+                        <p class="body-2-bold">10 Tips for the Landscape Photography Beginner</p>
+                        <p class="caption-para search-blog-text">
+                            It's quite common for us to be engaged by other photographers when we are out shooting our...
+                        </p>
+                        <p class="caption-accent">Sunday, February 25, 2018</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+</aside>
+
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-column">
+            <p class="caption">Contact</p>
+            <p class="caption">FAQ</p>
+            <p class="caption">Privacy Policy</p>
+            <p class="caption">Terms & Conditions</p>
+        </div>
+        <div class="footer-dropdown">
+            <button class="dropdown-btn caption" onclick="toggleDropdown(this)">
+                Australian Landscape Photography
+                <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="dropdown">
+                <p class="caption">Exclusive Framed Prints</p>
+                <p class="caption">Our Mounts and Frames</p>
+                <p class="caption">Fine Art Landscape Photography</p>
+                <p class="caption">Victorian Landscape Photography</p>
+                <p class="caption">Melbourne Landscape Photography</p>
+                <p class="caption">Sunshine Coast Landscape Photographer</p>
+                <p class="caption">Canvas Wall Prints and Framed Art</p>
+            </div>
+
+            <button class="dropdown-btn caption" onclick="toggleDropdown(this)">
+                Landscape Photography Help
+                <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="dropdown">
+                <p class="caption">Landscape Photography Help</p>
+                <p class="caption">Landscape Photography Blog</p>
+                <p class="caption">Australian Photography Workshops</p>
+                <p class="caption">Landscape Photography Tips</p>
+                <p class="caption">Top 10 Tips for the Landscape Photographer</p>
+                <p class="caption">How to Create Panoramic Images</p>
+                <p class="caption">How to Photograph Lightning & Storms</p>
+                <p class="caption">Focal Length vs. Perspective - What's the difference?</p>
+                <p class="caption">How to use Graduated Neutral Density Filters</p>
+            </div>
+
+            <button class="dropdown-btn caption" onclick="toggleDropdown(this)">
+                Popular Australian Galleries
+                <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="dropdown">
+                <p class="caption">Australian Panoramic Photography</p>
+                <p class="caption">Seascape Photos for Home</p>
+                <p class="caption">Australian Landscape Photography</p>
+                <p class="caption">Melbourne City Canvas</p>
+                <p class="caption">Sunshine Coast Panoramic Photos</p>
+                <p class="caption">Brisbane Landscape Photography</p>
+                <p class="caption">Gold Coast Landscape Photography</p>
+                <p class="caption">Fine Art Australian Landscape Prints</p>
+                <p class="caption">Interior Design Ideas - Big Wall Prints</p>
+            </div>
+        </div>
+        <div class="footer-social">
+            <figure class="social-link">
+                <img src="Assets/Facebook.png">
+            </figure>
+            <figure class="social-link">
+                <img src="Assets/Instagram.png">
+            </figure>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-divider"></div>
+        <p class="caption">© 2005-2024 AustralianLight Landscape Imagery Exclusive & Unique Australian Landscape Photography</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

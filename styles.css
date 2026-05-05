@@ -612,7 +612,7 @@ select {
     opacity: 60%;
 }
 
-.breadcrumb a, .quicknav a {
+.breadcrumb a, .breadcrumb p, .quicknav a {
     color: var(--color-text-secondary);
 }
 
