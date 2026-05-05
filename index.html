@@ -259,20 +259,42 @@
             </button>
 
             <div class="search-input-wrap">
-                <input 
-                    type="text" 
-                    id="search-input" 
-                    class="search-input body-2" 
-                    placeholder="Search key words"
-                    oninput="handleSearchInput()"
-                >
+                <input type="text" id="search-input" class="search-input body-2" placeholder="Search key words" oninput="handleSearchInput()">
                 <button class="search-submit-btn" aria-label="Search">
                     <img src="Assets/Search.svg" alt="">
                 </button>
             </div>
         </div>
 
-            
+        <div class="search-empty" id="search-empty">
+            <section class="search-history">
+                <h2>History</h2>
+
+                <div class="history-list">
+                    <div class="history-item body-2">
+                        <span class="history-text clickable" onclick="fillSearch('Sunset')">
+                            Sunset
+                        </span>
+                        <button class="history-delete body-1" onclick="deleteHistory(this)">×</button>
+                    </div>
+                    <div class="history-item body-2">
+                        <span class="history-text">
+                            Darling Harbour
+                        </span>
+                        <button class="history-delete body-1" onclick="deleteHistory(this)">×</button>
+                    </div>
+                
+                    <div class="history-item body-2">
+                        <span class="history-text">
+                            Ocean
+                        </span>
+                        <button class="history-delete body-1" onclick="deleteHistory(this)">×</button>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
 
 </aside>
 

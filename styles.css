@@ -79,6 +79,7 @@ main {
 }
 
 .body-2 { 
+    font-family: 'Avenir';
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
@@ -467,6 +468,37 @@ select {
     color: var(--color-text-tertiary);
 }
 
+.search-history h2 {
+    margin-bottom: 20px;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-text-secondary);
+}
+
+.history-item span {
+    color: var(--color-text-secondary);
+}
+
+.history-text.clickable {
+    cursor: pointer;
+}
+
+.history-delete {
+    color: var(--color-text-secondary);
+}
+
+.history-delete:hover {
+    color: var(--color-accent);
+}
 
 .hero {
     position: relative;

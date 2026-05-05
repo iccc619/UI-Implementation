@@ -236,3 +236,27 @@ function closeSearch() {
     panel.classList.remove("has-query");
     input.value = "";
 }
+
+function handleSearchInput() {
+    const panel = document.getElementById("search-panel");
+    const input = document.getElementById("search-input");
+
+    if (input.value.trim().length > 0) {
+        panel.classList.add("has-query");
+    } else {
+        panel.classList.remove("has-query");
+    }
+}
+
+function fillSearch(value) {
+    const input = document.getElementById("search-input");
+    const panel = document.getElementById("search-panel");
+
+    input.value = value;
+    panel.classList.add("has-query");
+}
+
+function deleteHistory(btn) {
+    const item = btn.closest(".history-item");
+    item.remove();
+}
