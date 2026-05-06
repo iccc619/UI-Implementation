@@ -265,7 +265,7 @@ function deleteHistory(btn) {
     item.remove();
 }
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function openCart() {
     document.getElementById("cart-panel").classList.add("open");
@@ -274,6 +274,10 @@ function openCart() {
 
 function closeCart() {
     document.getElementById("cart-panel").classList.remove("open");
+}
+
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 function addToCart() {
@@ -311,6 +315,7 @@ function addToCart() {
         });
     }
 
+    saveCart(); //saves previous memory//
     openCart(); //opens automatically//
 }
 
@@ -372,5 +377,6 @@ function changeCartQuantity(index, amount) {
         cart.splice(index, 1);
     }
 
+    saveCart();
     renderCart();
 }

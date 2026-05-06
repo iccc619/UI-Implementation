@@ -118,7 +118,7 @@
         </div>
 
         <div class="nav-right">
-            <button class="cart-btn" aria-label="Shopping cart">
+            <button class="cart-btn" aria-label="Shopping cart" onclick="openCart()">
                 <img src="Assets/Cart.svg" alt="">
             </button>
         </div>
@@ -429,6 +429,27 @@
                 </article>
             </section>
         </div>
+    </div>
+</aside>
+
+<aside class="cart-panel" id="cart-panel">
+    <div class="cart-top">
+        <h1 id="cart-title">Cart</h1>
+        <button class="cart-close-btn" onclick="closeCart()" aria-label="Close cart">×</button>
+    </div>
+
+    <article class="cart-items" id="cart-items">
+        <p class="empty-cart-text body-2">Empty Cart</p>
+    </article>
+
+    <div class="cart-bottom">
+        <div class="cart-subtotal">
+            <p class="body-1-medium">Subtotal <span class="caption">(ex. GST)</span></p>
+            <p class="body-1-medium" id="cart-subtotal">$00.00</p>
+        </div>
+
+        <button class="cart-checkout-btn body-2-bold">Check Out</button>
+        <button class="cart-paypal-btn body-2-bold">Pay with Paypal</button>
     </div>
 </aside>
 
