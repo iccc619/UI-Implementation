@@ -314,3 +314,27 @@ function addToCart() {
     openCart(); //opens automatically//
 }
 
+function renderCart() {
+    const cartItems = document.getElementById("cart-items");
+    const cartTitle = document.getElementById("cart-title");
+    const subtotalText = document.getElementById("cart-subtotal");
+    const checkoutBtn = document.querySelector(".cart-checkout-btn");
+    const paypalBtn = document.querySelector(".cart-paypal-btn");
+
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    cartTitle.textContent = totalItems > 0 ? `Cart (${totalItems})` : "Cart";
+    subtotalText.textContent = "$" + subtotal.toFixed(2);
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = `<p class="empty-cart-text body-2">Empty Cart</p>`;
+        checkoutBtn.disabled = true;
+        paypalBtn.disabled = true;
+        return;
+    }
+
+    checkoutBtn.disabled = false;
+    paypalBtn.disabled = false;
+
+}
