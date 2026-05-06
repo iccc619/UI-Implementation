@@ -136,14 +136,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const link = document.querySelector(".quicknav a");
     if (!link) return;
 
+    const label = link.querySelector(".quicknav-label");
+    if (!label) return;
+
     const title = sessionStorage.getItem("previousPageTitle");
     const url = sessionStorage.getItem("previousPageUrl");
 
     if (title && url) {
-        link.textContent = title;
+        label.textContent = title;
         link.href = url;
     } else {
-        link.textContent = "Back";
+        label.textContent = "Back";
         link.href = "javascript:history.back()";
     }
 });
@@ -260,6 +263,15 @@ function setPortraitImageClosedHeight() {
 
     if (!info || !image) return;
 
+    // phone screen: reset to original image ratio
+    if (window.innerWidth <= 768) {
+        image.style.height = "auto";
+        image.style.maxHeight = "none";
+        image.style.objectFit = "contain";
+        image.style.objectPosition = "top";
+        return;
+    }
+
     const activeButtons = info.querySelectorAll(".product-accordion .dropdown-btn.active");
     const dropdowns = info.querySelectorAll(".product-accordion .dropdown");
 
@@ -279,6 +291,7 @@ function setPortraitImageClosedHeight() {
     image.style.height = closedHeight + "px";
     image.style.maxHeight = closedHeight + "px";
     image.style.objectFit = "contain";
+    image.style.objectPosition = "top";
 
     // restore original dropdown state
     activeButtons.forEach(btn => btn.classList.add("active"));
