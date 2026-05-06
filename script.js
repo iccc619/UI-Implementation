@@ -337,4 +337,31 @@ function renderCart() {
     checkoutBtn.disabled = false;
     paypalBtn.disabled = false;
 
+    cartItems.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
+            <figure class="cart-item-image">
+                <img src="${item.image}" alt="">
+            </figure>
+
+            <div class="cart-item-info">
+                <p class="body-2-bold">${item.title}</p>
+
+                <div class="cart-item-details">
+                    <p class="body-2">Style: ${item.style}</p>
+                    <p class="body-2">Size: ${item.size}</p>
+                </div>
+
+                <div class="cart-item-row">
+                    <p class="body-1-medium">$${(item.price * item.quantity).toFixed(2)}</p>
+
+                    <div class="cart-quantity">
+                        <button onclick="changeCartQuantity(${index}, -1)">−</button>
+                        <span class="caption">${item.quantity}</span>
+                        <button onclick="changeCartQuantity(${index}, 1)">＋</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join("");
 }
+
