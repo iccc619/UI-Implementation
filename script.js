@@ -365,3 +365,12 @@ function renderCart() {
     `).join("");
 }
 
+function changeCartQuantity(index, amount) {
+    cart[index].quantity += amount;
+
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+
+    renderCart();
+}
