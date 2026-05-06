@@ -920,6 +920,49 @@ select {
     color: var(--color-text-secondary);
 }
 
+.cart-panel {
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 3000;
+    background-color: var(--color-bg-secondary);
+    overflow: hidden;
+    transition: width 0.4s ease;
+}
+
+.cart-panel.open {
+    width: 520px;
+}
+
+.cart-top {
+    height: 80px;
+    padding: 40px 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cart-close-btn {
+    font-size: 30px;
+    color: var(--color-text-tertiary);
+}
+
+.cart-items {
+    height: calc(100vh - 270px);
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.empty-cart-text {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-tertiary);
+}
+
 .footer {
     background-color: var(--color-bg-secondary);
     margin-top: 80px;

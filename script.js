@@ -264,3 +264,14 @@ function deleteHistory(btn) {
     const item = btn.closest(".history-item");
     item.remove();
 }
+
+let cart = [];
+
+function openCart() {
+    document.getElementById("cart-panel").classList.add("open");
+    renderCart();
+}
+
+function closeCart() {
+    document.getElementById("cart-panel").classList.remove("open");
+}
