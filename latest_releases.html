@@ -13,96 +13,6 @@
 <header class="header">
     <nav class="nav">
         <div class="nav-left">
-
-            <div class="sidebar" id="site-menu">
-                
-                <div>
-                    <button class="closebtn" onclick="closeNav()" aria-label="Close menu">×</button>
-                </div>
-                
-                <div class="sidebar-main">
-                    <a href="latest_releases.html" class="body-1-medium">Latest Releases</a>
-
-                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
-                        By Photographer
-                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown">
-                        <p class="body-2">Bernie Zajac</p>
-                        <p class="body-2">Russels Stewart</p>
-                    </div>
-
-                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
-                        Print Galleries
-                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown">
-                        <a href="ocean.html" class="body-2">Ocean / Seascape</a>
-                        <p class="body-2">Mountain / Forest</p>
-                        <p class="body-2">Rural / Country</p>
-                        <p class="body-2">Urban / City</p>
-                        <p class="body-2">Panorama</p>
-                        <p class="body-2">B&W / Toned</p>
-                        <p class="body-2">Overseas Travel</p>
-                    </div>
-
-                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
-                        About
-                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown">
-                        <p class="body-2">About Us</p>
-                        <p class="body-2">Our Mounts & Frames</p>
-                        <p class="body-2">Our Print Process</p>
-                        <p class="body-2">Our Print Sizes</p>
-                    </div>
-
-                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
-                        Blog
-                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown">
-                        <p class="body-2">AusLight SpotLights</p>
-                        <a href="general.html" class="body-2">General</a>
-                        <p class="body-2">Image Previews</p>
-                        <p class="body-2">New Print Releases</p>
-                        <p class="body-2">New Products</p>
-                        <p class="body-2">Photography Adventures</p>
-                        <p class="body-2">Photography Tips</p>
-                    </div>
-
-                    <p class="body-1-medium">Workshops</p>
-                </div>
-
-                <div class="sidebar-divider"></div>
-
-                <div class="sidebar-bottom">
-
-                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
-                        AUD / English
-                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown">
-                        <p class="body-2">AUD / English</p>
-                        <p class="body-2">USD / English</p>
-                    </div>
-
-                    <p class="body-1-medium">Log In</p>
-                    <p class="body-1-medium">Contact Us</p>
-                </div>
-
-            </div>
-
             <button class="menu-btn" aria-label="Open menu" onclick="openNav()">
                 <img src="Assets/Menu.svg" alt="">
             </button>
@@ -137,205 +47,6 @@
         <h1 class="section-title">Latest Releases</h1>
 
         <div class="listing-toolbar">
-
-            <div class="sidebar" id="product-filter">
-                
-                <div>
-                    <button class="closebtn" onclick="closeFilter()" aria-label="Close menu">×</button>
-                </div>
-                
-                <div class="sidebar-main">
-
-                    <p class="body-1-medium">Filter by</p>
-
-                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
-                        Price
-                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                
-                    <div class="dropdown">
-                        <div class="price-filter">
-                            <input type="number" placeholder="Lowest Price" class="price-input caption">
-                            <span class="price-dash">–</span>
-                            <input type="number" placeholder="Highest Price" class="price-input caption">
-                        </div>
-                    </div>
-
-                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
-                        Subject
-                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-
-                    <div class="dropdown filter-options">
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="ocean">
-                            <span>Ocean</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="mountain">
-                            <span>Mountain</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="forest">
-                            <span>Forest</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="rural">
-                            <span>Rural</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="city">
-                            <span>City</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="sunrise-sunset">
-                            <span>Sunrise / Sunset</span>
-                        </label>
-                    </div>
-
-                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
-                        Colour
-                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-
-                    <div class="dropdown filter-options">
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="ocean">
-                            <span>Colour</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="mountain">
-                            <span>Black & White</span>
-                        </label>
-                    </div>
-                
-                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
-                        Orientation
-                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-
-                    <div class="dropdown filter-options">
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="ocean">
-                            <span>Landscape</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="mountain">
-                            <span>Portrait</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="forest">
-                            <span>Square</span>
-                        </label>
-                    </div>
-
-                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
-                        Size
-                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-
-                    <div class="dropdown filter-options">
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="ocean">
-                            <span>20 inch</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="mountain">
-                            <span>24 inch</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="forest">
-                            <span>30 inch</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="rural">
-                            <span>40 inch</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="city">
-                            <span>48 inch</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="sunrise-sunset">
-                            <span>60 inch</span>
-                        </label>
-                    </div>
-
-                    <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
-                        Location
-                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-
-                    <div class="dropdown filter-options">
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="ocean">
-                            <span>ACT</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="mountain">
-                            <span>NSW</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="forest">
-                            <span>NT</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="rural">
-                            <span>QLD</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="city">
-                            <span>SA</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="sunrise-sunset">
-                            <span>TAS</span>
-                        </label>
-
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="city">
-                            <span>VIC</span>
-                        </label>
-                    
-                        <label class="filter-option body-2">
-                            <input type="checkbox" name="subject" value="sunrise-sunset">
-                            <span>WA</span>
-                        </label>
-                    </div>
-                    
-                </div>
-
-            </div>
 
             <button class="filter-btn body-2" aria-label="Open filter" onclick="openFilter()">
                 Filter
@@ -460,6 +171,296 @@
 
     
 </main>
+
+<div class="page-overlay" id="page-overlay" onclick="closeAllPanels()"></div>
+
+<aside class="sidebar" id="site-menu">
+                
+    <div>
+        <button class="closebtn" onclick="closeNav()" aria-label="Close menu">×</button>
+    </div>
+    
+    <div class="sidebar-main">
+        <a href="latest_releases.html" class="body-1-medium">Latest Releases</a>
+
+        <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+            By Photographer
+            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <div class="dropdown">
+            <p class="body-2">Bernie Zajac</p>
+            <p class="body-2">Russels Stewart</p>
+        </div>
+
+        <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+            Print Galleries
+            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <div class="dropdown">
+            <a href="ocean.html" class="body-2">Ocean / Seascape</a>
+            <p class="body-2">Mountain / Forest</p>
+            <p class="body-2">Rural / Country</p>
+            <p class="body-2">Urban / City</p>
+            <p class="body-2">Panorama</p>
+            <p class="body-2">B&W / Toned</p>
+            <p class="body-2">Overseas Travel</p>
+        </div>
+
+        <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+            About
+            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <div class="dropdown">
+            <p class="body-2">About Us</p>
+            <p class="body-2">Our Mounts & Frames</p>
+            <p class="body-2">Our Print Process</p>
+            <p class="body-2">Our Print Sizes</p>
+        </div>
+
+        <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+            Blog
+            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <div class="dropdown">
+            <p class="body-2">AusLight SpotLights</p>
+            <a href="general.html" class="body-2">General</a>
+            <p class="body-2">Image Previews</p>
+            <p class="body-2">New Print Releases</p>
+            <p class="body-2">New Products</p>
+            <p class="body-2">Photography Adventures</p>
+            <p class="body-2">Photography Tips</p>
+        </div>
+
+        <p class="body-1-medium">Workshops</p>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-bottom">
+
+        <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+            AUD / English
+            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <div class="dropdown">
+            <p class="body-2">AUD / English</p>
+            <p class="body-2">USD / English</p>
+        </div>
+
+        <p class="body-1-medium">Log In</p>
+        <p class="body-1-medium">Contact Us</p>
+    </div>
+
+</aside>
+
+<aside class="sidebar" id="product-filter">
+                
+    <div>
+        <button class="closebtn" onclick="closeFilter()" aria-label="Close menu">×</button>
+    </div>
+    
+    <div class="sidebar-main">
+
+        <p class="body-1-medium">Filter by</p>
+
+        <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+            Price
+            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    
+        <div class="dropdown">
+            <div class="price-filter">
+                <input type="number" placeholder="Lowest Price" class="price-input caption">
+                <span class="price-dash">–</span>
+                <input type="number" placeholder="Highest Price" class="price-input caption">
+            </div>
+        </div>
+
+        <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+            Subject
+            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <div class="dropdown filter-options">
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="ocean">
+                <span>Ocean</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="mountain">
+                <span>Mountain</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="forest">
+                <span>Forest</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="rural">
+                <span>Rural</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="city">
+                <span>City</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="sunrise-sunset">
+                <span>Sunrise / Sunset</span>
+            </label>
+        </div>
+
+        <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+            Colour
+            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <div class="dropdown filter-options">
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="ocean">
+                <span>Colour</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="mountain">
+                <span>Black & White</span>
+            </label>
+        </div>
+    
+        <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+            Orientation
+            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <div class="dropdown filter-options">
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="ocean">
+                <span>Landscape</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="mountain">
+                <span>Portrait</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="forest">
+                <span>Square</span>
+            </label>
+        </div>
+
+        <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+            Size
+            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <div class="dropdown filter-options">
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="ocean">
+                <span>20 inch</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="mountain">
+                <span>24 inch</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="forest">
+                <span>30 inch</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="rural">
+                <span>40 inch</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="city">
+                <span>48 inch</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="sunrise-sunset">
+                <span>60 inch</span>
+            </label>
+        </div>
+
+        <button class="dropdown-btn body-1-medium" onclick="toggleDropdown(this)">
+            Location
+            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <div class="dropdown filter-options">
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="ocean">
+                <span>ACT</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="mountain">
+                <span>NSW</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="forest">
+                <span>NT</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="rural">
+                <span>QLD</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="city">
+                <span>SA</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="sunrise-sunset">
+                <span>TAS</span>
+            </label>
+
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="city">
+                <span>VIC</span>
+            </label>
+        
+            <label class="filter-option body-2">
+                <input type="checkbox" name="subject" value="sunrise-sunset">
+                <span>WA</span>
+            </label>
+        </div>
+        
+    </div>
+
+</aside>
 
 <aside class="search-panel" id="search-panel">
     <div class="search-inner">
@@ -644,7 +645,7 @@
 
 <aside class="cart-panel" id="cart-panel">
     <div class="cart-top">
-        <h1 id="cart-title">Cart</h1>
+        <h2 id="cart-title">Cart</h2>
         <button class="cart-close-btn" onclick="closeCart()" aria-label="Close cart">×</button>
     </div>
 

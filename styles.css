@@ -43,7 +43,7 @@ h1 {
 }
 
 h2 {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 22px;
     letter-spacing: 0.5px;
 }
@@ -213,11 +213,29 @@ select {
     padding: 0px;
 }
 
+.page-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: #11111280;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.page-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar, .search-panel, .cart-panel {
+    z-index: 3000;
+}
+
 .sidebar {
     width: 0;
     height: 100%;
     position: fixed;
-    z-index: 1000;
     top: 0;
     left: 0;
     background-color: var(--color-bg-secondary);
@@ -429,7 +447,6 @@ select {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 3000;
     background-color: var(--color-bg-secondary);
     overflow-x: hidden;
     overflow-y: auto;
@@ -928,7 +945,6 @@ select {
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 3000;
     background-color: var(--color-bg-secondary);
     overflow: hidden;
     transition: width 0.4s ease;
@@ -940,7 +956,7 @@ select {
 
 .cart-top {
     flex-shrink: 0;
-    padding: 40px;
+    padding: 40px 40px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
