@@ -395,8 +395,8 @@ function renderCart() {
                 <p class="body-2-bold">${item.title}</p>
 
                 <div class="cart-item-details">
-                    <p class="body-2">Style: ${item.style}</p>
-                    <p class="body-2">Size: ${item.size}</p>
+                    <p class="caption-para">Style: ${item.style}</p>
+                    <p class="caption-para">Size: ${item.size}</p>
                 </div>
 
                 <div class="cart-item-row">
