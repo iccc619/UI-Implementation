@@ -275,3 +275,42 @@ function openCart() {
 function closeCart() {
     document.getElementById("cart-panel").classList.remove("open");
 }
+
+function addToCart() {
+    const productSection = document.querySelector(".product-detail");
+    if (!productSection) return;
+
+    //get product information from product detail page//
+    const image = productSection.querySelector(".product-detail-image img").getAttribute("src");
+    const title = productSection.querySelector(".product-detail-info h1").textContent.trim();
+    const styleSelect = document.getElementById("style-select");
+    const sizeSelect = document.getElementById("size-select");
+    const priceText = document.getElementById("product-price").textContent.replace("$", "");
+
+    const style = styleSelect.options[styleSelect.selectedIndex].textContent.trim();
+    const size = sizeSelect.options[sizeSelect.selectedIndex].textContent.trim();
+    const price = parseFloat(priceText);
+
+    //check if item already exists//
+    const existingItem = cart.find(item =>
+        item.title === title &&
+        item.style === style &&
+        item.size === size
+    );
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            image: image,
+            title: title,
+            style: style,
+            size: size,
+            price: price,
+            quantity: 1
+        });
+    }
+
+    openCart(); //opens automatically//
+}
+
