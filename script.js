@@ -436,3 +436,54 @@ function changeCartQuantity(index, amount) {
     saveCart();
     renderCart();
 }
+
+function renderCheckoutSummary() {
+    const summaryItems = document.getElementById("summary-items");
+    const summarySubtotal = document.getElementById("summary-subtotal");
+
+    if (!summaryItems || !summarySubtotal) return;
+
+    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const subtotal = savedCart.reduce((sum, item) => {
+        return sum + item.price * item.quantity;
+    }, 0);
+
+    if (savedCart.length === 0) {
+        summaryItems.innerHTML = `<p class="body-2">Your cart is empty.</p>`;
+        summarySubtotal.textContent = "$00.00";
+        return;
+    }
+
+    summaryItems.innerHTML = savedCart.map(item => `
+        <div class="summary-item">
+            <img src="${item.image}" alt="">
+
+            <div class="summary-info">
+                <p class="body-2-bold">${item.title}</p>
+                <div>
+                    <p class="caption-para">Style: ${item.style}</p>
+                    <p class="caption-para">Size: ${item.size}</p>
+                </div>
+            </div>
+
+            <div class="summary-price">
+                <p class="body-1-medium">$${(item.price * item.quantity).toFixed(2)}</p>
+                <p class="summary-quantity caption">× ${item.quantity}</p>
+            </div>
+        </div>
+    `).join("");
+
+    summarySubtotal.textContent = "$" + subtotal.toFixed(2);
+}
+
+function toggleOrderSummary() {
+    const summary = document.querySelector(".checkout-summary");
+    if (!summary) return;
+
+    summary.classList.toggle("open");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    renderCheckoutSummary();
+});

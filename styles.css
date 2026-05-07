@@ -1172,6 +1172,40 @@ select {
     display: block;
 }
 
+.summary-item {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-bg-tertiary);
+}
+
+.summary-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.summary-info, .summary-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.summary-info .caption-para {
+    color: var(--color-text-secondary);
+}
+
+.summary-price {
+    text-align: right;
+}
+
+.summary-quantity {
+    margin-top: auto;
+    color: var(--color-text-secondary);
+}
+
 .summary-subtotal {
     padding-top: 20px;
     display: flex;
@@ -1423,6 +1457,8 @@ select {
     .cart-items {
         padding: 0 20px 30px;
     }
+
+    
 
     .footer {
         margin-top: 40px;
