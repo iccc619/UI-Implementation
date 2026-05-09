@@ -1165,11 +1165,23 @@ select {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    cursor: default;
+    cursor: pointer;
+}
+
+.summary-arrow {
+    transition: transform 0.3s ease;
+}
+
+.checkout-summary.open .summary-content {
+    display: block;
+}
+
+.checkout-summary.open .summary-arrow {
+    transform: rotate(180deg);
 }
 
 .summary-content {
-    display: block;
+    display: none;
 }
 
 .summary-item {
