@@ -481,7 +481,11 @@ function toggleOrderSummary() {
     const summary = document.querySelector(".checkout-summary");
     if (!summary) return;
 
-    summary.classList.toggle("open");
+    if (window.innerWidth <= 768) {
+        summary.classList.toggle("mobile-open");
+    } else {
+        summary.classList.toggle("open");
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
