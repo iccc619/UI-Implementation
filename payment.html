@@ -31,61 +31,23 @@
     <article class="checkout-left">
         <form class="checkout-form">
 
-            <h2>Contact</h2>
+            <h2>Shipping Information</h2>
             <div class="checkout-form-list">
-                <input type="text" placeholder="First name" class="checkout-input body-2">
-                <input type="text" placeholder="Last name" class="checkout-input body-2">
-                <input type="email" placeholder="Email" class="checkout-input body-2">
-                <input type="tel" placeholder="Phone" class="checkout-input body-2">
+                <span class="body-2">Contact</span>
+                <span class="body-2">Ship to</span>
+                <span class="body-2">Shipping Method</span>
             </div>
 
-            <h2>Address</h2>
+            <h2>Discount</h2>
             <div class="checkout-form-list">
-                <input type="text" placeholder="Address" class="checkout-input body-2">
-                <input type="text" placeholder="Postcode" class="checkout-input body-2">
-                
-                <label class="option-group">
-                    <select class="option-select body-2">
-                        <option value="">State</option>
-                        <option>Australian Capital Territory</option>
-                        <option>New South Wales</option>
-                        <option>Northern Territory</option>
-                        <option>South Australia</option>
-                        <option>Queensland</option>
-                        <option>Tasmania</option>
-                        <option>Victoria</option>
-                        <option>Western Australia</option>                            
-                    </select>
-                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </label>
-
-                <label class="option-group">
-                    <select class="option-select body-2">
-                        <option>Australia</option>
-                        <option>New Zealand</option>
-                        <option>China</option>
-                        <option>Japan</option>
-                        <option>South Korea</option>
-                        <option>United States</option>
-                        <option>Canada</option>
-                        <option>United Kingdom</option>
-                    </select>
-                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
-                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </label>
+                <input type="text" placeholder="Discount code" class="checkout-input body-2">
             </div>
 
+            <h2>Payment</h2>
             <button type="button" class="checkout-main-btn body-2-bold" onclick="window.location.href='payment.html'">
-                Continue to Payment
+                Pay with Paypal
             </button>
                 
-            <button type="button" class="return-cart-btn caption" onclick="openCart()">
-                <img src="Assets/Arrow.svg" style="transform: scaleX(-1);" alt="">
-                Return to Cart
-            </button>
         </form>
     </article>
 
