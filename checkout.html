@@ -33,20 +33,20 @@
 
             <h2>Contact</h2>
             <div class="form-list">
-                <input type="text" placeholder="First name" class="checkout-input body-2">
-                <input type="text" placeholder="Last name" class="checkout-input body-2">
+                <input type="text" id="contact-first-name" placeholder="First name" class="checkout-input body-2">
+                <input type="text" id="contact-last-name" placeholder="Last name" class="checkout-input body-2">
                 <input type="email" id="contact-email" placeholder="Email" class="checkout-input body-2">
-                <input type="tel" placeholder="Phone" class="checkout-input body-2">
+                <input type="tel" id="contact-phone" placeholder="Phone" class="checkout-input body-2">
             </div>
 
             <h2>Address</h2>
             <div class="form-list">
                 <input type="text" id="address-address" placeholder="Address" class="checkout-input body-2">
-                <input type="text" placeholder="Postcode" class="checkout-input body-2">
+                <input type="text" id="address-postcode" placeholder="Postcode" class="checkout-input body-2">
                 
                 <label class="option-group">
-                    <select class="option-select body-2">
-                        <option value="">State</option>
+                    <select id="address-state" class="option-select body-2">
+                        <option value="" selected disabled>State</option>
                         <option>Australian Capital Territory</option>
                         <option>New South Wales</option>
                         <option>Northern Territory</option>
@@ -78,9 +78,9 @@
                 </label>
             </div>
 
-            <a href="payment.html" class="main-btn body-2-bold" onclick="saveCheckoutInfo()">
+            <button type="button" id="payment-btn" class="main-btn body-2-bold" onclick="saveCheckoutInfo()" disabled>
                 Continue to Payment
-            </a>
+            </button>
                 
             <button type="button" class="return-cart-btn caption" onclick="openCart()">
                 <img src="Assets/Arrow.svg" style="transform: scaleX(-1);" alt="">

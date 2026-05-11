@@ -92,10 +92,10 @@ function closeCart() {
 }
 
 function toggleDropdown(button) {
-    const container = button.closest(".sidebar, #product-filter, .product-accordion, .footer-dropdown");
+    const container = button.closest(".sidebar, #product-filter, .product-accordion, .footer-dropdown, .info-form");
     if (!container) return; 
 
-    const allButtons = document.querySelectorAll(".dropdown-btn");
+    const allButtons = document.querySelectorAll(".dropdown-btn .payment-info-btn");
     // close the previous button when opening a new one//
     allButtons.forEach(btn => {
         if (btn !== button) {
@@ -391,12 +391,10 @@ function renderCart() {
     if (cart.length === 0) {
         cartItems.innerHTML = `<p class="empty-cart-text body-2">Empty Cart</p>`;
         checkoutBtn.disabled = true;
-        paypalBtn.disabled = true;
         return;
     }
 
     checkoutBtn.disabled = false;
-    paypalBtn.disabled = false;
 
     cartItems.innerHTML = cart.map((item, index) => `
         <div class="cart-item">
@@ -502,6 +500,43 @@ function saveCheckoutInfo() {
     window.location.href = "payment.html";
 }
 
+function checkCheckoutForm() {
+    const requiredFields = [
+        "contact-first-name",
+        "contact-last-name",
+        "contact-email",
+        "contact-phone",
+        "address-address",
+        "address-postcode",
+        "address-state"
+    ];
+
+    const btn = document.getElementById("payment-btn");
+    if (!btn) return;
+
+    const allFilled = requiredFields.every(id => {
+        const field = document.getElementById(id);
+        return field && field.value.trim() !== "";
+    });
+
+    btn.disabled = !allFilled;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".checkout-input, .option-select").forEach(input => {
+        input.addEventListener("input", checkCheckoutForm);
+        input.addEventListener("change", checkCheckoutForm);
+    });
+
+    checkCheckoutForm();
+
+    setTimeout(checkCheckoutForm, 100);
+});
+
+window.addEventListener("pageshow", () => {
+    checkCheckoutForm();
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     renderCheckoutSummary();
     loadShippingInfo();
@@ -556,4 +591,6 @@ function saveShippingField(fieldId, button) {
 
     button.textContent = "Edit";
     button.setAttribute("onclick", `editShippingField('${fieldId}', this)`);
+
+    checkPaymentForm();
 }

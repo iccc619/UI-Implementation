@@ -1146,6 +1146,15 @@ select {
     background-color: var(--color-accent-light);
 }
 
+.main-btn:disabled {
+    opacity: 50%;
+    cursor: default;
+}
+
+.main-btn:disabled:hover {
+    background-color: var(--color-accent);
+}
+
 .return-cart-btn {
     margin-top: 20px;
     display: flex;
@@ -1210,6 +1219,19 @@ select {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.payment-info-btn.active + .dropdown {
+    max-height: 500px;
+}
+
+.payment-info-btn.active .arrow {
+    transform: rotate(180deg);
+}
+
+.info-form .dropdown p {
+    padding: 10px 0;
+    color: var(--color-text-secondary);
 }
 
 .summary-toggle {
