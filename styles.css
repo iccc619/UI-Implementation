@@ -1076,6 +1076,7 @@ select {
 .cart-paypal-btn {
     border: 1px solid var(--color-accent);
     color: var(--color-text-primary);
+    cursor: default;
 }
 
 .cart-paypal-btn:hover {
@@ -1334,15 +1335,32 @@ select {
     padding: 40px 120px;
 }
 
+.confirmation-message {
+    margin-bottom: 20px;
+    color: var(--color-text-secondary);
+}
+
 .info-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 
 .info-list .info-line {
     margin-bottom: 0;
+}
+
+.final-address {
+    text-align: right;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-top: 20px;
 }
 
 .footer {

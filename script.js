@@ -95,7 +95,7 @@ function toggleDropdown(button) {
     const container = button.closest(".sidebar, #product-filter, .product-accordion, .footer-dropdown, .info-form");
     if (!container) return; 
 
-    const allButtons = document.querySelectorAll(".dropdown-btn .payment-info-btn");
+    const allButtons = document.querySelectorAll(".dropdown-btn, .payment-info-btn");
     // close the previous button when opening a new one//
     allButtons.forEach(btn => {
         if (btn !== button) {
@@ -247,16 +247,6 @@ if (styleSelect && sizeSelect && priceText) {
     updatePrice();
 }
 
-function toggleDetailDropdown(button) {
-    const dropdown = button.nextElementSibling;
-    const icon = button.querySelector("span");
-
-    button.classList.toggle("active");
-    dropdown.classList.toggle("open");
-
-    icon.textContent = dropdown.classList.contains("open") ? "⌃" : "⌄";
-}
-
 function setPortraitImageClosedHeight() {
     const info = document.querySelector(".product-detail-info");
     const image = document.querySelector(".portrait-image img");
@@ -378,7 +368,6 @@ function renderCart() {
     const cartTitle = document.getElementById("cart-title");
     const subtotalText = document.getElementById("cart-subtotal");
     const checkoutBtn = document.querySelector(".cart-checkout-btn");
-    const paypalBtn = document.querySelector(".cart-paypal-btn");
 
     if (!cartItems || !cartTitle || !subtotalText) return;
 
@@ -498,7 +487,7 @@ function renderCheckoutSummary() {
         summaryExtra.innerHTML = `
             <div class="info-line">
                 <p class="body-2-bold">Discount</p>
-                <p class="body-2-bold">$${discount.toFixed(2)}</p>
+                <p class="body-2-bold">-$${discount.toFixed(2)}</p>
             </div>
 
             <div class="info-line">
@@ -674,11 +663,115 @@ function saveShippingField(fieldId, button) {
 
     button.textContent = "Edit";
     button.setAttribute("onclick", `editShippingField('${fieldId}', this)`);
-
-    checkPaymentForm();
 }
 
 function saveFinalOrder() {
-    
+    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const subtotal = savedCart.reduce((sum, item) => {
+        return sum + item.price * item.quantity;
+    }, 0);
+
+    const discountInput = document.getElementById("discount-code");
+    const discount = discountInput && discountInput.value.trim() !== "" ? 10 : 0;
+
+    const country = localStorage.getItem("checkoutCountry") || "Australia";
+    const asiaCountries = ["China", "Japan", "South Korea"];
+
+    let shipping = 80;
+    let arrivalDays = 14;
+
+    if (country === "Australia" || country === "New Zealand") {
+        shipping = 20;
+        arrivalDays = 3;
+    } else if (asiaCountries.includes(country)) {
+        shipping = 50;
+        arrivalDays = 7;
+    }
+
+    const total = subtotal - discount + shipping;
+
+    const orderNumber = Math.floor(1000000000 + Math.random() * 9000000000);
+
+    const today = new Date();
+    today.setDate(today.getDate() + arrivalDays);
+
+    const estimatedArrival = today.toLocaleDateString("en-AU", {
+        day: "numeric",
+        month: "short",
+        year: "numeric"
+    });
+
+    localStorage.setItem("finalOrderTotal", total.toFixed(2));
+    localStorage.setItem("finalOrderNumber", orderNumber);
+    localStorage.setItem("finalEstimatedArrival", estimatedArrival);
+
     window.location.href = "confirmation.html";
 }
+
+function renderConfirmationPage() {
+    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const email = localStorage.getItem("checkoutEmail") || "your email";
+    const firstName = localStorage.getItem("checkoutFirstName") || "";
+    const lastName = localStorage.getItem("checkoutLastName") || "";
+    const address = localStorage.getItem("checkoutAddress") || "No address provided";
+
+    const orderNumber = localStorage.getItem("finalOrderNumber") || "0000000000";
+    const total = localStorage.getItem("finalOrderTotal") || "0.00";
+    const arrival = localStorage.getItem("finalEstimatedArrival") || "—";
+
+    const message = document.getElementById("confirmation-message");
+    const finalTotal = document.getElementById("final-total");
+    const finalOrderNumber = document.getElementById("final-order-number");
+    const finalArrival = document.getElementById("final-arrival");
+    const finalShipTo = document.getElementById("final-ship-to");
+    const summaryItems = document.getElementById("summary-items");
+    const summaryFinalTotal = document.getElementById("summary-final-total");
+
+    if (message) {
+        message.innerHTML = `
+            Your order number is ${orderNumber}. <br><br>
+            A confirmation message containing all your order information was sent to ${email}. <br><br>
+            If you do not receive a confirmation email within 24 hours or require support please call 0416 143 908.
+        `;
+    }
+
+    if (finalTotal) finalTotal.textContent = "$" + total;
+    if (finalOrderNumber) finalOrderNumber.textContent = orderNumber;
+    if (finalArrival) finalArrival.textContent = arrival;
+
+    if (finalShipTo) {
+        finalShipTo.innerHTML = `
+            ${firstName} ${lastName}<br>
+            ${address}
+        `;
+    }
+
+    if (summaryFinalTotal) summaryFinalTotal.textContent = "$" + total;
+
+    if (summaryItems) {
+        summaryItems.innerHTML = savedCart.map(item => `
+            <div class="summary-item">
+                <img src="${item.image}" alt="">
+
+                <div class="summary-info">
+                    <p class="body-2-bold">${item.title}</p>
+                    <div>
+                        <p class="caption-para">Style: ${item.style}</p>
+                        <p class="caption-para">Size: ${item.size}</p>
+                    </div>
+                </div>
+
+                <div class="summary-price">
+                    <p class="body-1-medium">$${(item.price * item.quantity).toFixed(2)}</p>
+                    <p class="summary-quantity caption">× ${item.quantity}</p>
+                </div>
+            </div>
+        `).join("");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    renderConfirmationPage();
+});
