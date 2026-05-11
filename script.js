@@ -544,16 +544,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function saveCheckoutInfo() {
-    const firstName = document.getElementById("contact--first-name")?.value.trim();
+    const firstName = document.getElementById("contact-first-name")?.value.trim();
     const lastName = document.getElementById("contact-last-name")?.value.trim();
+
     const email = document.getElementById("contact-email")?.value.trim();
+
     const address = document.getElementById("address-address")?.value.trim();
-    const country = document.getElementById("address-country")?.value.trim();
+    const postcode = document.getElementById("address-postcode")?.value.trim();
+
+    const stateSelect = document.getElementById("address-state");
+    const state = stateSelect ? stateSelect.value : "";
+
+    const countrySelect = document.getElementById("address-country");
+    const country = countrySelect ? countrySelect.value : "";
+
+    const stateMap = {
+        "New South Wales": "NSW",
+        "Victoria": "VIC",
+        "Queensland": "QLD",
+        "South Australia": "SA",
+        "Western Australia": "WA",
+        "Tasmania": "TAS",
+        "Northern Territory": "NT",
+        "Australian Capital Territory": "ACT",
+        "Other (state above)": ""
+    };
+
+    const stateShort = stateMap[state] || state;
+
+    const fullAddress = `${address} ${stateShort} ${postcode}`;
 
     localStorage.setItem("checkoutFirstName", firstName || "");
     localStorage.setItem("checkoutLastName", lastName || "");
     localStorage.setItem("checkoutEmail", email || "");
-    localStorage.setItem("checkoutAddress", address || "");
+    localStorage.setItem("checkoutAddress", fullAddress || "");
     localStorage.setItem("checkoutCountry", country || "Australia");
 
     window.location.href = "payment.html";
