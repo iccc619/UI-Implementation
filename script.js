@@ -438,6 +438,7 @@ function changeCartQuantity(index, amount) {
 function renderCheckoutSummary() {
     const summaryItems = document.getElementById("summary-items");
     const summarySubtotal = document.getElementById("summary-subtotal");
+    const summaryExtra = document.getElementById("summary-extra");
 
     if (!summaryItems || !summarySubtotal) return;
 
@@ -447,9 +448,28 @@ function renderCheckoutSummary() {
         return sum + item.price * item.quantity;
     }, 0);
 
+    const discountInput = document.getElementById("discount-code");
+    const hasDiscount = discountInput && discountInput.value.trim() !== "";
+    const discount = hasDiscount ? 10 : 0;
+
+    const country = localStorage.getItem("checkoutCountry") || "Australia";
+    const asiaCountries = ["China", "Japan", "South Korea"];
+
+    let shipping = 80;
+
+    if (country === "Australia" || country === "New Zealand") {
+        shipping = 20;
+    } else if (asiaCountries.includes(country)) {
+        shipping = 50;
+    }
+
+    const gst = 0;
+    const total = subtotal - discount + shipping + gst;
+
     if (savedCart.length === 0) {
         summaryItems.innerHTML = `<p class="body-2">Your cart is empty.</p>`;
         summarySubtotal.textContent = "$00.00";
+        if (summaryExtra) summaryExtra.innerHTML = "";
         return;
     }
 
@@ -471,9 +491,42 @@ function renderCheckoutSummary() {
             </div>
         </div>
     `).join("");
-
+    
     summarySubtotal.textContent = "$" + subtotal.toFixed(2);
+
+    if (summaryExtra) {
+        summaryExtra.innerHTML = `
+            <div class="summary-line">
+                <p class="body-2-bold">Discount</p>
+                <p class="body-2-bold">$${discount.toFixed(2)}</p>
+            </div>
+
+            <div class="summary-line">
+                <p class="body-2-bold">Shipping</p>
+                <p class="body-2-bold">$${shipping.toFixed(2)}</p>
+            </div>
+
+            <div class="summary-line">
+                <p class="body-2-bold">GST Amount</p>
+                <p class="body-2-bold">$${gst.toFixed(2)}</p>
+            </div>
+
+            <div class="summary-total">
+                <p class="body-1-medium">Total</p>
+                <p class="body-1-medium">$${total.toFixed(2)}</p>
+            </div>
+        `;
+    }
 }
+
+// Actively change the price //
+document.addEventListener("DOMContentLoaded", () => {
+    const discountInput = document.getElementById("discount-code");
+
+    if (discountInput) {
+        discountInput.addEventListener("input", renderCheckoutSummary);
+    }
+});
 
 function toggleOrderSummary() {
     const summary = document.querySelector(".checkout-summary");
@@ -491,11 +544,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function saveCheckoutInfo() {
+    const firstName = document.getElementById("contact--first-name")?.value.trim();
+    const lastName = document.getElementById("contact-last-name")?.value.trim();
     const email = document.getElementById("contact-email")?.value.trim();
     const address = document.getElementById("address-address")?.value.trim();
+    const country = document.getElementById("address-country")?.value.trim();
 
+    localStorage.setItem("checkoutFirstName", firstName || "");
+    localStorage.setItem("checkoutLastName", lastName || "");
     localStorage.setItem("checkoutEmail", email || "");
     localStorage.setItem("checkoutAddress", address || "");
+    localStorage.setItem("checkoutCountry", country || "Australia");
 
     window.location.href = "payment.html";
 }
