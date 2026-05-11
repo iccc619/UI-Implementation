@@ -491,3 +491,13 @@ function toggleOrderSummary() {
 document.addEventListener("DOMContentLoaded", () => {
     renderCheckoutSummary();
 });
+
+function saveCheckoutInfo() {
+    const email = document.getElementById("contact-email")?.value.trim();
+    const address = document.getElementById("address-address")?.value.trim();
+
+    localStorage.setItem("checkoutEmail", email || "");
+    localStorage.setItem("checkoutAddress", address || "");
+
+    window.location.href = "payment.html";
+}

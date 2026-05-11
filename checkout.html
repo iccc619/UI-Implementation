@@ -29,19 +29,19 @@
 <main class="page-shell checkout">
 
     <article class="checkout-left">
-        <form class="checkout-form">
+        <form class="info-form">
 
             <h2>Contact</h2>
-            <div class="checkout-form-list">
+            <div class="form-list">
                 <input type="text" placeholder="First name" class="checkout-input body-2">
                 <input type="text" placeholder="Last name" class="checkout-input body-2">
-                <input type="email" placeholder="Email" class="checkout-input body-2">
+                <input type="email" id="contact-email" placeholder="Email" class="checkout-input body-2">
                 <input type="tel" placeholder="Phone" class="checkout-input body-2">
             </div>
 
             <h2>Address</h2>
-            <div class="checkout-form-list">
-                <input type="text" placeholder="Address" class="checkout-input body-2">
+            <div class="form-list">
+                <input type="text" id="address-address" placeholder="Address" class="checkout-input body-2">
                 <input type="text" placeholder="Postcode" class="checkout-input body-2">
                 
                 <label class="option-group">
@@ -78,7 +78,7 @@
                 </label>
             </div>
 
-            <button type="button" class="checkout-main-btn body-2-bold" onclick="window.location.href='payment.html'">
+            <button type="button" class="checkout-main-btn body-2-bold" onclick="window.location.href='payment.html'" onclick="saveCheckoutInfo()">
                 Continue to Payment
             </button>
                 

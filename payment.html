@@ -29,17 +29,38 @@
 <main class="page-shell checkout">
 
     <article class="checkout-left">
-        <form class="checkout-form">
+        <form class="info-form">
 
             <h2>Shipping Information</h2>
-            <div class="checkout-form-list">
-                <span class="body-2">Contact</span>
-                <span class="body-2">Ship to</span>
-                <span class="body-2">Shipping Method</span>
+            <div class="form-list">
+                <div class="shipping-info-box">
+                    <div class="shipping-info-head">
+                        <span class="body-2">Contact</span>
+                        <button type="button" class="caption" onclick="editShippingField('shipping-contact', this)">Edit</button>
+                    </div>
+                    <div class="shipping-info-value body-2" id="shipping-contact"></div>
+                </div>
+                
+                <div class="shipping-info-box">
+                    <div class="shipping-info-head">
+                        <span class="body-2">Ship to</span>
+                        <button type="button" class="caption" onclick="editShippingField('shipping-address', this)">Edit</button>
+                    </div>
+                    <div class="shipping-info-value body-2" id="shipping-address"></div>
+                </div>
+
+                <div class="shipping-info-box">
+                    <div class="shipping-info-head">
+                        <span class="body-2">Shipping Method</span>
+                    </div>
+                    <div class="shipping-info-value body-2">
+                        Sensitive Freight Courier
+                    </div>
+                </div>
             </div>
 
             <h2>Discount</h2>
-            <div class="checkout-form-list">
+            <div class="form-list">
                 <input type="text" placeholder="Discount code" class="checkout-input body-2">
             </div>
 
