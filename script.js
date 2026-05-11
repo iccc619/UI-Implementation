@@ -496,17 +496,17 @@ function renderCheckoutSummary() {
 
     if (summaryExtra) {
         summaryExtra.innerHTML = `
-            <div class="summary-line">
+            <div class="info-line">
                 <p class="body-2-bold">Discount</p>
                 <p class="body-2-bold">$${discount.toFixed(2)}</p>
             </div>
 
-            <div class="summary-line">
+            <div class="info-line">
                 <p class="body-2-bold">Shipping</p>
                 <p class="body-2-bold">$${shipping.toFixed(2)}</p>
             </div>
 
-            <div class="summary-line">
+            <div class="info-line">
                 <p class="body-2-bold">GST Amount</p>
                 <p class="body-2-bold">$${gst.toFixed(2)}</p>
             </div>
@@ -676,4 +676,9 @@ function saveShippingField(fieldId, button) {
     button.setAttribute("onclick", `editShippingField('${fieldId}', this)`);
 
     checkPaymentForm();
+}
+
+function saveFinalOrder() {
+    
+    window.location.href = "confirmation.html";
 }

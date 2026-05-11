@@ -26,47 +26,69 @@
     </nav>
 </header>
 
-<main class="page-shell checkout">
+<main class="page-shell">
 
-    <article class="checkout-left">
-        <form class="info-form">
+    <section class="confirmation-head">
+        <div class="success-icon">
+            <img src="Assets/Check.svg">
+        </div>
+        <h1>Thank you for your order!</h1>
+    </section>
 
-            <p class="caption-para">
-                Your order number is 1234567890. <br><br>
-                A confirmation message containing all your order information was sent to iriswangsh@gmail.com. <br><br>
-                If you do not receive a confirmation email within 24 hours or require support please call 0416 143 908. <br><br>
-            </p>
-
-            <h2>Order Details</h2>
-
-            <h2>Payment</h2>
-            <button type="button" id="paypal-btn" class="main-btn body-2-bold">
-                Pay with Paypal
+    <section class="confirmation-grid">
+        <article class="checkout-left">
+            <form class="info-form">
+    
+                <p class="caption-para" id="confirmation-message"></p>
+    
+                <h2>Order Details</h2>
+                <div class="info-list">
+                    <div class="info-line">
+                        <p class="body-2">Order Total</p>
+                        <p class="body-2" id="final-total">$00.00</p>
+                    </div>
+    
+                    <div class="info-line">
+                        <p class="body-2">Order Number</p>
+                        <p class="body-2" id="final-order-number">0000000000</p>
+                    </div>
+    
+                    <div class="info-line">
+                        <p class="body-2">Estimated Arrival</p>
+                        <p class="body-2" id="final-arrival">—</p>
+                    </div>
+    
+                    <div class="info-line">
+                        <p class="body-2">Ship to</p>
+                        <p class="body-2 final-address" id="final-ship-to">—</p>
+                    </div>
+                </div>
+    
+                <button type="button" id="homepage-btn" class="main-btn body-2-bold" onclick="window.location.href='index.html'">
+                    Return to Homepage
+                </button>
+                    
+            </form>
+        </article>
+    
+        <aside class="checkout-summary open">
+            <button class="summary-toggle" onclick="toggleOrderSummary()">
+                <h2>Order Summary</h2>
+                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
             </button>
-                
-        </form>
-    </article>
-
-    <aside class="checkout-summary open">
-        <button class="summary-toggle" onclick="toggleOrderSummary()">
-            <h2>Order Summary</h2>
-            <svg class="summary-arrow" width="16" height="16" viewBox="0 0 16 16">
-                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
-
-        <div class="summary-content" id="summary-content">
-            <div class="summary-items" id="summary-items"></div>
-        </div>
-
-        <div class="summary-subtotal">
-            <p class="body-1-medium">Subtotal <span class="caption">(ex. GST)</span></p>
-            <p class="body-1-medium" id="summary-subtotal">$00.00</p>
-        </div>
-
-        <div class="summary-extra" id="summary-extra"></div>
-    </aside>
-
+    
+            <div class="summary-content" id="summary-content">
+                <div class="summary-items" id="summary-items"></div>
+            </div>
+    
+            <div class="summary-total">
+                <p class="body-1-medium">Order Total</p>
+                <p class="body-1-medium" id="summary-final-total">$00.00</p>
+            </div>
+        </aside>
+    </section>
 </main>
 
 <footer class="footer" style="background-color: var(--color-bg-primary)">
