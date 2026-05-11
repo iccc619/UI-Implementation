@@ -1132,14 +1132,17 @@ select {
     border: 1px solid var(--color-accent);
 }
 
-.checkout-main-btn {
+.main-btn {
     height: 52px;
     border-radius: 8px;
     background-color: var(--color-accent);
     color: var(--color-bg-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.checkout-main-btn:hover {
+.main-btn:hover {
     background-color: var(--color-accent-light);
 }
 
@@ -1199,6 +1202,14 @@ select {
     outline: none;
     background: transparent;
     color: var(--color-text-primary);
+}
+
+.payment-info-btn {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .summary-toggle {
@@ -1403,6 +1414,11 @@ select {
         grid-template-columns: 1.2fr 0.8fr;
         padding: 0 60px;
         gap: 60px;
+    }
+
+    .checkout {
+        gap: 60px;
+        padding: 130px 60px 40px;
     }
 
     .footer-grid {

@@ -501,3 +501,59 @@ function saveCheckoutInfo() {
 
     window.location.href = "payment.html";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    renderCheckoutSummary();
+    loadShippingInfo();
+});
+
+function loadShippingInfo() {
+    const contactBox = document.getElementById("shipping-contact");
+    const addressBox = document.getElementById("shipping-address");
+
+    if (contactBox) {
+        contactBox.textContent = localStorage.getItem("checkoutEmail") || "No email provided";
+    }
+
+    if (addressBox) {
+        addressBox.textContent = localStorage.getItem("checkoutAddress") || "No address provided";
+    }
+}
+
+function editShippingField(fieldId, button) {
+    const field = document.getElementById(fieldId);
+    if (!field) return;
+
+    const currentValue = field.textContent.trim();
+
+    field.innerHTML = `
+        <input type="text" class="shipping-edit-input body-2" value="${currentValue}">
+    `;
+
+    const input = field.querySelector("input");
+    input.focus();
+
+    button.textContent = "Save";
+    button.setAttribute("onclick", `saveShippingField('${fieldId}', this)`);
+}
+
+function saveShippingField(fieldId, button) {
+    const field = document.getElementById(fieldId);
+    const input = field.querySelector("input");
+    if (!input) return;
+
+    const newValue = input.value.trim();
+
+    field.textContent = newValue || "Not provided";
+
+    if (fieldId === "shipping-contact") {
+        localStorage.setItem("checkoutEmail", newValue);
+    }
+
+    if (fieldId === "shipping-address") {
+        localStorage.setItem("checkoutAddress", newValue);
+    }
+
+    button.textContent = "Edit";
+    button.setAttribute("onclick", `editShippingField('${fieldId}', this)`);
+}

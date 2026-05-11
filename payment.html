@@ -65,9 +65,23 @@
             </div>
 
             <h2>Payment</h2>
-            <button type="button" class="checkout-main-btn body-2-bold" onclick="window.location.href='payment.html'">
+            <button type="button" class="main-btn body-2-bold" onclick="window.location.href='payment.html'">
                 Pay with Paypal
             </button>
+
+            <button type="button" class="payment-info-btn body-2-bold" onclick="toggleDropdown(this)">
+                Payment Information
+                <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="dropdown">
+                <p class="caption-para">
+                    AustralianLight accepts secure Credit Card payments via PayPal - here's why: It is the safest way for you to shop online. PayPal is the largest, most respected online payment processor on the internet with well over 200 million users. <br><br>
+                    The payment transaction process happens directly on their secure servers (SSL-protected); PayPal process your payment and then send us notification that the payment processed successfully. We never see your credit card details and we never store them on our server. <br><br>
+                    NOTE: You do not have to have a PayPal account to pay by Credit Card - simply complete the transaction process!
+                </p>
+            </div>
                 
         </form>
     </article>
