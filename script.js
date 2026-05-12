@@ -428,6 +428,7 @@ function renderCheckoutSummary() {
     const summaryItems = document.getElementById("summary-items");
     const summarySubtotal = document.getElementById("summary-subtotal");
     const summaryExtra = document.getElementById("summary-extra");
+    const summaryTotal = document.getElementById("summary-total");
 
     if (!summaryItems || !summarySubtotal) return;
 
@@ -499,13 +500,16 @@ function renderCheckoutSummary() {
                 <p class="body-2-bold">GST Amount</p>
                 <p class="body-2-bold">$${gst.toFixed(2)}</p>
             </div>
-
-            <div class="summary-total">
-                <p class="body-1-medium">Total</p>
-                <p class="body-1-medium">$${total.toFixed(2)}</p>
-            </div>
         `;
     }
+
+    if (summaryTotal) {
+        summaryTotal.innerHTML = `
+            <p class="body-1-medium">Total</p>
+            <p class="body-1-medium">$${total.toFixed(2)}</p>
+        `;
+    }
+            
 }
 
 // Actively change the price //
@@ -731,7 +735,9 @@ function renderConfirmationPage() {
 
     if (message) {
         message.innerHTML = `
-            Your order number is ${orderNumber}. <br><br>
+            <span class="order-number-text">
+                Your order number is ${orderNumber}. <br><br>
+            </span>
             A confirmation message containing all your order information was sent to ${email}. <br><br>
             If you do not receive a confirmation email within 24 hours or require support please call 0416 143 908.
         `;
@@ -775,3 +781,21 @@ function renderConfirmationPage() {
 document.addEventListener("DOMContentLoaded", () => {
     renderConfirmationPage();
 });
+
+function returnHomeAndClearOrder() {
+    localStorage.removeItem("cart");
+
+    localStorage.removeItem("checkoutFirstName");
+    localStorage.removeItem("checkoutLastName");
+    localStorage.removeItem("checkoutEmail");
+    localStorage.removeItem("checkoutAddress");
+    localStorage.removeItem("checkoutCountry");
+
+    localStorage.removeItem("finalOrderTotal");
+    localStorage.removeItem("finalOrderNumber");
+    localStorage.removeItem("finalEstimatedArrival");
+
+    cart = [];
+
+    window.location.href = "index.html";
+}

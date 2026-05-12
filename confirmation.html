@@ -12,17 +12,13 @@
 
 <header class="header">
     <nav class="nav">
-        <div class="nav-left">
-            <button aria-label="Back">
-                <a href="index.html"><img src="Assets/Arrow.svg" alt="" style="transform: scaleX(-1);"></a>
-            </button>
-        </div>
-
+        <div class="nav-left"></div>
         <div class="logo">
             <button class="logo-btn" aria-label="Logo">
                 <a href="index.html"><img src="Assets/Logo.svg" alt=""></a>
             </button>
         </div>
+        <div class="nav-right"></div>
     </nav>
 </header>
 
@@ -64,7 +60,7 @@
                     </div>
                 </div>
     
-                <button type="button" id="homepage-btn" class="main-btn body-2-bold" onclick="window.location.href='index.html'">
+                <button type="button" id="homepage-btn" class="main-btn body-2-bold" onclick="returnHomeAndClearOrder()">
                     Return to Homepage
                 </button>
                     
@@ -83,7 +79,7 @@
                 <div class="summary-items" id="summary-items"></div>
             </div>
     
-            <div class="order-total">
+            <div class="summary-total">
                 <p class="body-1-medium">Order Total</p>
                 <p class="body-1-medium" id="summary-final-total">$00.00</p>
             </div>
