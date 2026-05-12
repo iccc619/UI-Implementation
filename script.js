@@ -9,11 +9,13 @@ window.addEventListener("scroll", function () {
 });
 
 function showOverlay() {
-    document.getElementById("page-overlay").classList.add("active");
+    const overlay = document.getElementById("page-overlay");
+    if (overlay) overlay.classList.add("active");
 }
 
 function hideOverlay() {
-    document.getElementById("page-overlay").classList.remove("active");
+    const overlay = document.getElementById("page-overlay");
+    if (overlay) overlay.classList.remove("active");
 }
 
 function closeAllPanels() {
@@ -95,7 +97,7 @@ function toggleDropdown(button) {
     const container = button.closest(".sidebar, #product-filter, .product-accordion, .footer-dropdown, .info-form");
     if (!container) return; 
 
-    const allButtons = document.querySelectorAll(".dropdown-btn, .payment-info-btn");
+    const allButtons = container.querySelectorAll(".dropdown-btn, .payment-info-btn");
     // close the previous button when opening a new one//
     allButtons.forEach(btn => {
         if (btn !== button) {
@@ -379,11 +381,11 @@ function renderCart() {
 
     if (cart.length === 0) {
         cartItems.innerHTML = `<p class="empty-cart-text body-2">Empty Cart</p>`;
-        checkoutBtn.disabled = true;
+        if (checkoutBtn) checkoutBtn.disabled = true;
         return;
     }
 
-    checkoutBtn.disabled = false;
+    if (checkoutBtn) checkoutBtn.disabled = false;
 
     cartItems.innerHTML = cart.map((item, index) => `
         <div class="cart-item">
@@ -543,6 +545,7 @@ function saveCheckoutInfo() {
     const email = document.getElementById("contact-email")?.value.trim();
 
     const address = document.getElementById("address-address")?.value.trim();
+    const suburb = document.getElementById("address-suburb")?.value.trim();
     const postcode = document.getElementById("address-postcode")?.value.trim();
 
     const stateSelect = document.getElementById("address-state");
@@ -565,7 +568,7 @@ function saveCheckoutInfo() {
 
     const stateShort = stateMap[state] || state;
 
-    const fullAddress = `${address} ${stateShort} ${postcode}`;
+    const fullAddress = `${address}, ${suburb} ${stateShort} ${postcode}`;
 
     localStorage.setItem("checkoutFirstName", firstName || "");
     localStorage.setItem("checkoutLastName", lastName || "");
@@ -583,6 +586,7 @@ function checkCheckoutForm() {
         "contact-email",
         "contact-phone",
         "address-address",
+        "address-suburb",
         "address-postcode",
         "address-state"
     ];
@@ -789,6 +793,7 @@ function returnHomeAndClearOrder() {
     localStorage.removeItem("checkoutLastName");
     localStorage.removeItem("checkoutEmail");
     localStorage.removeItem("checkoutAddress");
+    localStorage.removeItem("checkoutSuburb");
     localStorage.removeItem("checkoutCountry");
 
     localStorage.removeItem("finalOrderTotal");

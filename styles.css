@@ -154,6 +154,15 @@ select {
     font-weight: 400;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--color-text-primary);
+    -webkit-box-shadow: 0 0 0 1000px var(--color-bg-secondary) inset;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
 .container {
     max-width: 1440px;
     margin: 0 auto;
@@ -1659,6 +1668,7 @@ select {
     .checkout-summary.mobile-open .summary-arrow {
         transform: rotate(180deg);
     }
+
     .summary-item {
         grid-template-columns: 90px 1fr auto;
     }
@@ -1686,7 +1696,7 @@ select {
         display: block;
     }
 
-    .checkout-summary.open.mobile-open .summary-line,
+    .checkout-summary.open.mobile-open .info-line,
     .checkout-summary.open.mobile-open .summary-total {
         display: flex;
         border-top: none;
